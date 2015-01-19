@@ -3,21 +3,20 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   	<title>About - Dan Padgett</title>
 
-<jsp:include page="includes/globalcss.jsp"></jsp:include>
+	<jsp:include page="includes/globalcss.jsp"></jsp:include>
 
-<jsp:include page="includes/globaljs.jsp"></jsp:include>
-	
-<script type="text/javascript" src="resources/js/blog.js"></script>
+	<jsp:include page="includes/globaljs.jsp"></jsp:include>
 
-<title>Dan Padgett - Labs</title>
-</head>
-	<body ng-app="blogViewer">
-	
+  </head>
+  <body>
+
 	<jsp:include page="includes/header.jsp"></jsp:include>
 		
 	<!-- Fixed navbar -->
@@ -34,30 +33,20 @@
 	    </div>
 	    <div class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href='<c:url value="/"/>'>Home</a></li>
-	        <li><a href='<c:url value="/about"/>'>About</a></li>
+	        <li><a href='<c:url value="/"/>'>Home</a></li>
+	        <li class="active"><a href='<c:url value="/about"/>'>About</a></li>
 	      </ul>
 	    </div><!--/.nav-collapse -->
 	  </div>
 	</div>
-	
-	<div class="container" ng-controller="BlogController">
-		<div ng-repeat="entry in blogentries">
-			<div class="page-header">
-				<b>{{entry.title}}</b> - <em>{{entry.date}}</em>
-			</div>
-			<ng-include src="entry.path"></ng-include>
+
+		<div class="container">
+		<div class="page-header">
+		ABOUT
 		</div>
 	</div>
 
 	<jsp:include page="includes/footer.jsp"></jsp:include>
-			
-	<script type="text/javascript">
-		(function(jQuery){
-		  jQuery( document ).ready( function() {
-		    prettyPrint();
-		  } );
-		}(jQuery))
-	</script>
+		
 	</body>
 </html>

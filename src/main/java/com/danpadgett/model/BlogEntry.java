@@ -1,5 +1,7 @@
 package com.danpadgett.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,19 +11,34 @@ public class BlogEntry {
 	@Id
 	private Long id;
 	
-	private String author;
-	private String body;
+	private Date createdDate;
+	private Date modifiedDate;
 	
-	public String getAuthor() {
-		return author;
+	private String title;
+	private String path;
+	
+	public Date getCreatedDate() {
+		return createdDate;
 	}
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
-	public String getBody() {
-		return body;
+	public Date getModifiedDate() {
+		return modifiedDate;
 	}
-	public void setBody(String body) {
-		this.body = body;
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
 	}
 }

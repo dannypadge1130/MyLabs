@@ -20,5 +20,4 @@ public class BlogEntryController {
 	public List<BlogEntry> getBlogEntries() {
 		return blogEntryService.findAllBlogEntries();
 	}
-	
 }

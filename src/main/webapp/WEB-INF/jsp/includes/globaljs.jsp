@@ -1,2 +1,3 @@
-<script src="/resources/js/angular.min.js"></script>
-<script src="/resources/js/prettify.js"></script>
+<script type="text/javascript" src="resources/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="resources/js/angular.js"></script>
+<script type="text/javascript" src="resources/js/prettify.js"></script>
