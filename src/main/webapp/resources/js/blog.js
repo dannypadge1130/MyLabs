@@ -2,16 +2,18 @@
 	
 	var app = angular.module("blogViewer", []);
 	
-	var BlogController = function($scope) {
+	var BlogController = function($scope, $http) {
 			
-		$scope.blogentries = [{
-			title: "Blog Entry Title1",
-			date: "11/30/2015",
-			path: "resources/html/buildmesomegrails.html"
-		}]
-		
+		$http.get('http://localhost:8080/mylabs/api/blog-entries.json').
+		  success(function(data) {
+			  $scope.blogentries = data;
+		  }).
+		  error(function(data) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		 });
 	};
 	
-	app.controller("BlogController", ["$scope", BlogController]);
+	app.controller("BlogController", ["$scope", "$http", BlogController]);
 	
 }());

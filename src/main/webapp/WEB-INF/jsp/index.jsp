@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -44,7 +43,7 @@
 	<div class="container" ng-controller="BlogController">
 		<div ng-repeat="entry in blogentries">
 			<div class="page-header">
-				<b>{{entry.title}}</b> - <em>{{entry.date}}</em>
+				<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"mediumDate"}}</em>
 			</div>
 			<ng-include src="entry.path"></ng-include>
 		</div>
