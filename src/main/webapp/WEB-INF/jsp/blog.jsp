@@ -11,7 +11,7 @@
 
 <jsp:include page="includes/globaljs.jsp"></jsp:include>
 	
-<title>Dan Padgett - Labs</title>
+<title>MyLabs - Dan Padgett</title>
 </head>
 	<body ng-app="app">
 	

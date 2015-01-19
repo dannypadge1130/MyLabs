@@ -44,7 +44,7 @@
 
 		<div class="container">
 		<div class="page-header">
-		ABOUT
+			ABOUT
 		</div>
 	</div>
 
