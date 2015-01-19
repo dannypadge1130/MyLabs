@@ -53,15 +53,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		internalResourceViewResolver.setSuffix(".jsp");
 		return internalResourceViewResolver;
 	}
-	
-	@Bean
-	public InternalResourceViewResolver getHTMLInternalResourceViewResolver() {
-		InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-		internalResourceViewResolver.setPrefix("/WEB-INF/html/");
-		internalResourceViewResolver.setSuffix(".html");
-		return internalResourceViewResolver;
-	}
-	
+		
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
