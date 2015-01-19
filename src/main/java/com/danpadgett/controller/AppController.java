@@ -9,11 +9,21 @@ public class AppController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String viewApplication() {
-		return "index";
+		return "blog";
 	}
 	
 	@RequestMapping(value="/about", method=RequestMethod.GET)
 	public String viewAbout() {
 		return "about";
+	}
+	
+	@RequestMapping(value="/labs", method=RequestMethod.GET)
+	public String viewLabs() {
+		return "labs";
+	}
+	
+	@RequestMapping(value="/tutorials", method=RequestMethod.GET)
+	public String viewTutorials() {
+		return "tutorials";
 	}
 }

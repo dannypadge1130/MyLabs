@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.danpadgett.model.BlogEntry;
-import com.danpadgett.service.BlogEntryService;
+import com.danpadgett.model.Tutorial;
+import com.danpadgett.service.TutorialService;
 
 @RestController
-public class BlogEntryController {
+public class TutorialController {
 
 	@Autowired
-	private BlogEntryService blogEntryService;
+	private TutorialService tutorialService;
 	
-	@RequestMapping(value="/api/blog-entries", method=RequestMethod.GET) 
-	public List<BlogEntry> getAllBlogEntries() {
-		return blogEntryService.findAllBlogEntries();
+	@RequestMapping(value="/api/tutorials", method=RequestMethod.GET) 
+	public List<Tutorial> getAllTutorials() {
+		return tutorialService.findAllTutorials();
 	}
+	
 }

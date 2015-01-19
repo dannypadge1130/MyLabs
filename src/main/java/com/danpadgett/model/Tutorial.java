@@ -5,8 +5,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="blog_entries")
-public class BlogEntry {
+@Document(collection="tutorial")
+public class Tutorial {
 
 	@Id
 	private Long id;
@@ -15,7 +15,7 @@ public class BlogEntry {
 	private Date modifiedDate;
 	
 	private String title;
-	private String post;
+	private String filepath;
 	
 	public Date getCreatedDate() {
 		return createdDate;
@@ -35,10 +35,10 @@ public class BlogEntry {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getPost() {
-		return post;
+	public String getFilepath() {
+		return filepath;
 	}
-	public void setPost(String post) {
-		this.post = post;
-	}
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}	
 }

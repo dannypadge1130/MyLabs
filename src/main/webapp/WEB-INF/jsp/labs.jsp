@@ -8,14 +8,14 @@
 <html lang="en">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   	<title>About - Dan Padgett</title>
+   	<title>Labs - Dan Padgett</title>
 
 	<jsp:include page="includes/globalcss.jsp"></jsp:include>
 
 	<jsp:include page="includes/globaljs.jsp"></jsp:include>
 
   </head>
-  <body>
+  <body ng-app="app">
 
 	<jsp:include page="includes/header.jsp"></jsp:include>
 		
@@ -34,17 +34,19 @@
 	    <div class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
 	        <li><a href='<c:url value="/"/>'>Blog</a></li>
-	        <li><a href='<c:url value="/labs"/>'>Labs</a></li>
+	        <li class="active"><a href='<c:url value="/labs"/>'>Labs</a></li>
 	        <li><a href='<c:url value="/tutorials"/>'>Tutorials</a></li>
-	        <li class="active"><a href='<c:url value="/about"/>'>About</a></li>
+	        <li><a href='<c:url value="/about"/>'>About</a></li>
 	      </ul>
 	    </div><!--/.nav-collapse -->
 	  </div>
 	</div>
 
-		<div class="container">
-		<div class="page-header">
-		ABOUT
+	<div class="container" ng-controller="LabController">
+		<div ng-repeat="lab in labs">
+			<div class="page-header">
+				<b>{{lab.title}}</b> - <em>{{lab.createdDate | date:"mediumDate"}}</em>
+			</div>
 		</div>
 	</div>
 

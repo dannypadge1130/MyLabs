@@ -11,11 +11,9 @@
 
 <jsp:include page="includes/globaljs.jsp"></jsp:include>
 	
-<script type="text/javascript" src="resources/js/blog.js"></script>
-
 <title>Dan Padgett - Labs</title>
 </head>
-	<body ng-app="blogViewer">
+	<body ng-app="app">
 	
 	<jsp:include page="includes/header.jsp"></jsp:include>
 		
@@ -29,12 +27,15 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand">My Labs</a>
+	      <a href='<c:url value="/"/>' class="navbar-brand">My Labs</a>
 	    </div>
 	    <div class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href='<c:url value="/"/>'>Home</a></li>
+	        <li class="active"><a href='<c:url value="/"/>'>Blog</a></li>
+	        <li><a href='<c:url value="/labs"/>'>Labs</a></li>
+	        <li><a href='<c:url value="/tutorials"/>'>Tutorials</a></li>
 	        <li><a href='<c:url value="/about"/>'>About</a></li>
+	      
 	      </ul>
 	    </div><!--/.nav-collapse -->
 	  </div>
@@ -45,7 +46,7 @@
 			<div class="page-header">
 				<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"mediumDate"}}</em>
 			</div>
-			<ng-include src="entry.path"></ng-include>
+			{{entry.post}}
 		</div>
 	</div>
 
