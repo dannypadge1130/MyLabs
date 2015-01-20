@@ -41,13 +41,22 @@
 	  </div>
 	</div>
 	
-	<div class="container" ng-controller="BlogController">
-		<div ng-repeat="entry in blogentries">
-			<div class="page-header">
-				<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"mediumDate"}}</em>
+	<div style="margin-top:20px" ng-controller="BlogController">
+	
+		<div ng-repeat="entry in blogentries | orderBy:createdDate">
+		
+			<div class="container">
+				<div class="page-header" ng-if="entry.createdDate == entry.modifiedDate">
+					<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"medium"}}</em>
+				</div>
+				<div class="page-header" ng-if="entry.createdDate != entry.modifiedDate">
+					<b>{{entry.title}}</b> - <em>edited {{entry.createdDate | date:"medium"}}</em>
+				</div>
+				<div ng-bind-html="entry.post"></div>
 			</div>
-			<div ng-bind-html="entry.post"></div>
+			
 		</div>
+		
 	</div>
 
 	<jsp:include page="includes/footer.jsp"></jsp:include>

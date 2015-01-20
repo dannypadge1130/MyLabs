@@ -2,6 +2,7 @@ package com.danpadgett.model;
 
 import java.util.Date;
 
+import org.hibernate.validator.constraints.URL;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +13,14 @@ public class Lab {
 	private Long id;
 	
 	private String title;
+	private String description;
+	
+	@URL
+	private String liveURL;
+	
+	@URL
+	private String repoURL;
+	
 	private Date createdDate;
 	private Date modifiedDate;
 	
@@ -20,6 +29,24 @@ public class Lab {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getLiveURL() {
+		return liveURL;
+	}
+	public void setLiveURL(String liveURL) {
+		this.liveURL = liveURL;
+	}
+	public String getRepoURL() {
+		return repoURL;
+	}
+	public void setRepoURL(String repoURL) {
+		this.repoURL = repoURL;
 	}
 	public Date getCreatedDate() {
 		return createdDate;
@@ -32,5 +59,5 @@ public class Lab {
 	}
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
-	}	
+	}
 }

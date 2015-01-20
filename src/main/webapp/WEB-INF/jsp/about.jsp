@@ -42,37 +42,39 @@
 	  </div>
 	</div>
 
-	<div class="container">
-		<div class="page-header">ABOUT</div>
+	<div style="margin-top:20px">
+		<div class="container">
+			<div class="page-header">ABOUT</div>
+				
+			<div class="container">
+				<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
+				I decided to start this site to help track my ideas and personal work.  I broke this site 
+				down into three sections, articles and blog entries, tutorials, and most importantly different 
+				personal projects I decide to work on.  I will call these personal projects labs.</p>
+			</div>	
 			
-		<div class="container">
-			<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
-			I decided to start this site to help track my ideas and personal work.  I broke this site 
-			down into three sections, articles and blog entries, tutorials, and most importantly different 
-			personal projects I decide to work on.  I will call these personal projects labs.</p>
-		</div>	
-		
-		<div class="container">	
-			<strong>Blog</strong>
-			<p>The idea of this blog is to track my train of thought as I discover new technologies, 
-			and solve different problems.</p>
-		</div>
-				
-		<div class="container">
-			<strong>Tutorials</strong>
-			<p>For future reference and contribution to the Web, I plan on creating tutorials for 
-			different problems I have encountered and the steps I took in resolving them.</p>
-		</div>
-				
-		<div class="container">
-			<strong>Labs</strong>
-			<p>In this section I will provide information regarding different personal projects 
-			I am working on or have worked on. These can be small or very large applications.  
-			I plan on providing source code for all these.</p>
-		</div>
-		
-		<div style="margin-top:20px">
-			<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MongoDB</em>
+			<div class="container">	
+				<strong>Blog</strong>
+				<p>The idea of this blog is to track my train of thought as I discover new technologies, 
+				and solve different problems.</p>
+			</div>
+					
+			<div class="container">
+				<strong>Tutorials</strong>
+				<p>For future reference and contribution to the Web, I plan on creating tutorials for 
+				different problems I have encountered and the steps I took in resolving them.</p>
+			</div>
+					
+			<div class="container">
+				<strong>Labs</strong>
+				<p>In this section I will provide information regarding different personal projects 
+				I am working on or have worked on. These can be small or very large applications.  
+				I plan on providing source code for all these.</p>
+			</div>
+			
+			<div style="margin-top:20px">
+				<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MongoDB</em>
+			</div>
 		</div>
 	</div>
 
