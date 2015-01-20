@@ -1,0 +1,15 @@
+.lab-icons {
+	margin-top: 10px
+}
+
+.lab-icons .icon {
+	display: inline-block;
+}
+
+.lab-icons .icon a {
+	margin-right: 20px
+}
+
+.lab-icons .icon img {
+	height: 20px
+}

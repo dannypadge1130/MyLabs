@@ -43,9 +43,23 @@
 	</div>
 
 	<div class="container" ng-controller="LabController">
-		<div ng-repeat="lab in labs">
-			<div class="page-header">
-				<b>{{lab.title}}</b> - <em>{{lab.createdDate | date:"mediumDate"}}</em>
+		<div ng-repeat="lab in labs | orderBy:createdDate">
+			<div class="page-header" ng-if="lab.createdDate == lab.modifiedDate">
+				<b>{{lab.title}}</b> - <em>{{lab.createdDate | date:"medium"}}</em>
+			</div>
+			<div class="page-header" ng-if="lab.createdDate != lab.modifiedDate">
+				<b>{{lab.title}}</b> - <em>edited {{lab.createdDate | date:"medium"}}</em>
+			</div>
+			
+			<div ng-bind-html="lab.description"></div>
+			
+			<div class="lab-icons">
+				<div ng-if="lab.liveURL" class="icon">
+					<a href="lab.liveURL"><em>Live</em> <img src="resources/images/globe-icon.png"></a>
+				</div>
+				<div ng-if="lab.repoURL" class="icon">
+					<a href="lab.repoURL"><em>Source</em> <img src="resources/images/footer/github-footer.png"></a>
+				</div>
 			</div>
 		</div>
 	</div>
