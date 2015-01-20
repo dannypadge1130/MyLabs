@@ -46,7 +46,7 @@
 			<div class="page-header">
 				<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"mediumDate"}}</em>
 			</div>
-			{{entry.post}}
+			<div ng-bind-html="entry.post"></div>
 		</div>
 	</div>
 

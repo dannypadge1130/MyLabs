@@ -1,6 +1,6 @@
 (function () {
 	
-	var app = angular.module("app", []);
+	var app = angular.module("app", ['ngSanitize']);
 	
 	var BlogController = function($scope, $http) {
 			
