@@ -13,3 +13,29 @@
 .lab-icons .icon img {
 	height: 20px
 }
+
+.blog .postheader {
+	padding: 5px;
+	background-color: orange;
+	color: white;
+}
+
+.blog .postbody {
+	font-family: 'Roboto Slab', serif;
+	padding: 5px;
+	border-style: solid; 
+	border-width: 1px; 
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#filters button {
+	border: none;
+	background: none;
+	color: #777;
+	float: left;
+	height: 50px;
+	padding: 15px 10px;
+	font-size: 14px;
+	line-height: 20px;
+}

@@ -55,10 +55,10 @@
 			
 			<div class="lab-icons">
 				<div ng-if="lab.liveURL" class="icon">
-					<a href="lab.liveURL"><em>Live</em> <img src="resources/images/globe-icon.png"></a>
+					<a href="{{lab.liveURL}}"><em>Live</em> <img src="resources/images/globe-icon.png"></a>
 				</div>
 				<div ng-if="lab.repoURL" class="icon">
-					<a href="lab.repoURL"><em>Source</em> <img src="resources/images/footer/github-footer.png"></a>
+					<a href="{{lab.repoURL}}"><em>Source</em> <img src="resources/images/footer/github-footer.png"></a>
 				</div>
 			</div>
 		</div>
