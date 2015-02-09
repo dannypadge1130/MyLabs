@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.danpadgett.model.Lab;
-import com.danpadgett.repository.LabRepository;
+import com.danpadgett.model.LabEntry;
+import com.danpadgett.repository.LabEntryRepository;
 
 @Service
 public class LabServiceImpl implements LabService {
 
 	@Autowired
-	LabRepository labRepository;
+	LabEntryRepository labRepository;
 	
 	@Override
-	public List<Lab> findAllLabs() {
+	public List<LabEntry> findAllLabs() {
 		return labRepository.findAll();
 	}
 

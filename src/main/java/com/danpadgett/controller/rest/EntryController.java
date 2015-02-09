@@ -7,18 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.danpadgett.model.Tutorial;
-import com.danpadgett.service.TutorialService;
+import com.danpadgett.model.Entry;
+import com.danpadgett.service.EntryService;
 
 @RestController
-public class TutorialController {
-
+public class EntryController {
+	
 	@Autowired
-	private TutorialService tutorialService;
+	private EntryService entryService;
 	
-	@RequestMapping(value="/api/tutorials", method=RequestMethod.GET) 
-	public List<Tutorial> getAllTutorials() {
-		return tutorialService.findAllTutorials();
+	@RequestMapping(value="/api/entries", method=RequestMethod.GET)
+	public List<Entry> getAllEntries() {
+		return entryService.findAllEntry();
 	}
-	
 }

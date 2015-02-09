@@ -5,8 +5,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="tutorial")
-public class Tutorial {
+@Document
+public abstract class Entry {
 
 	@Id
 	private Long id;
@@ -15,7 +15,15 @@ public class Tutorial {
 	private Date modifiedDate;
 	
 	private String title;
-	private String filepath;
+	private String body;
+	
+	private String imgUrl;
+	
+	private String type;
+	
+	public Entry(String type) {
+		this.type = type;
+	}
 	
 	public Date getCreatedDate() {
 		return createdDate;
@@ -35,10 +43,19 @@ public class Tutorial {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getFilepath() {
-		return filepath;
+	public String getBody() {
+		return body;
 	}
-	public void setFilepath(String filepath) {
-		this.filepath = filepath;
-	}	
+	public void setBody(String body) {
+		this.body = body;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	public String getType() {
+		return this.type;
+	}
 }

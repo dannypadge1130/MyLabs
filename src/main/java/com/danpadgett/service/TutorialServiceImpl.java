@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.danpadgett.model.Tutorial;
-import com.danpadgett.repository.TutorialRepository;
+import com.danpadgett.model.TutorialEntry;
+import com.danpadgett.repository.TutorialEntryRepository;
 
 @Service
 public class TutorialServiceImpl implements TutorialService {
 
 	@Autowired
-	TutorialRepository tutorialRepository;
+	TutorialEntryRepository tutorialRepository;
 	
 	@Override
-	public List<Tutorial> findAllTutorials() {
+	public List<TutorialEntry> findAllTutorials() {
 		return tutorialRepository.findAll();
 	}
 	

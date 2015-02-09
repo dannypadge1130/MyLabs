@@ -1,47 +1,23 @@
 (function () {
 	
-	var app = angular.module("app", ['ngSanitize']);
+	var app = angular.module("app", ['ngSanitize', 'ngAnimate']);
 	
-	var BlogController = function($scope, $http) {
+	var EntryController = function($scope, $http) {
 			
-		$http.get('/mylabs/api/blog-entries.json').
-		  success(function(data) {
-			  $scope.blogentries = data;
-		  }).
-		  error(function(data) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
-		 });
-	};
-	
-	var LabController = function($scope, $http) {
+		$scope.type = "*";
 		
-		$http.get('/mylabs/api/labs.json').
+		$http.get('/mylabs/api/entries.json').
 		  success(function(data) {
-			  $scope.labs = data;
+			  $scope.entries = data;
 		  }).
 		  error(function(data) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
+			  //TODO
 		 });
-	};
-	
-	var TutorialController = function($scope, $http) {
 		
-		$http.get('/mylabs/api/tutorials.json').
-		  success(function(data) {
-			  $scope.tutorials = data;
-		  }).
-		  error(function(data) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
-		 });
+		$scope.setType = function(type) {
+			$scope.type = type;
+		};
 	};
 	
-	app.controller("BlogController", ["$scope", "$http", BlogController]);
-
-	app.controller("LabController", ["$scope", "$http", LabController]);
-
-	app.controller("TutorialController", ["$scope", "$http", TutorialController]);
-
+	app.controller("EntryController", ["$scope", "$http", EntryController]);
 }());
