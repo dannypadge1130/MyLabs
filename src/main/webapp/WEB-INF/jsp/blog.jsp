@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-lg-2"></div>
 				<div class="col-lg-8">	
-					<img width="600px" height="150px" src="https://prerender.io/img/angularjs.jpg" alt="{{entry.title}}"/>
+					<img width="600px" height="150px" ng-src="entry.bannerImageUrl" alt="{{entry.title}}"/>
 					<h1>{{entry.title}}</h1>
 					
 					<!-- Author -->

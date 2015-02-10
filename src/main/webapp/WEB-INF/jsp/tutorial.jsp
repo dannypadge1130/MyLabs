@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="col-lg-2"></div>
 			<div class="col-lg-8">	
-				<img width="600px" height="150px" src="http://upload.wikimedia.org/wikipedia/de/5/56/Grails_logo_2009_2010.jpg" alt="{{entry.title}}"/>
+				<img width="600px" height="150px" ng-src="{{entry.bannerImageUrl}}" alt="{{entry.title}}"/>
 				<h1>{{entry.title}}</h1>
 				
 				<!-- Author -->
