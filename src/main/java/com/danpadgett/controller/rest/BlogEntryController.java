@@ -3,6 +3,7 @@ package com.danpadgett.controller.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,10 @@ public class BlogEntryController {
 	@RequestMapping(value="/api/blog-entries", method=RequestMethod.GET) 
 	public List<BlogEntry> getAllBlogEntries() {
 		return blogEntryService.findAllBlogEntries();
+	}
+	
+	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.GET)
+	public BlogEntry getBlogEntry(@PathVariable long blogEntryId) {
+		return blogEntryService.findBlogEntry(blogEntryId);
 	}
 }

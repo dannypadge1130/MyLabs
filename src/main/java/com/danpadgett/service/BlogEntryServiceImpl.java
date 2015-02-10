@@ -17,5 +17,9 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 	public List<BlogEntry> findAllBlogEntries() {
 		return blogEntryRepository.findAll();
 	}
+
+	public BlogEntry findBlogEntry(long blogEntryId) {
+		return blogEntryRepository.findOne(blogEntryId);
+	}
 	
 }

@@ -8,4 +8,6 @@ public interface BlogEntryService {
 	
 	public List<BlogEntry> findAllBlogEntries();
 	
+	public BlogEntry findBlogEntry(long blogEntryId);
+	
 }

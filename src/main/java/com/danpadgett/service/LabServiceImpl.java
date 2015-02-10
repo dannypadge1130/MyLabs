@@ -19,4 +19,8 @@ public class LabServiceImpl implements LabService {
 		return labRepository.findAll();
 	}
 
+	@Override
+	public LabEntry findLab(long labId) {
+		return labRepository.findOne(labId);
+	}
 }

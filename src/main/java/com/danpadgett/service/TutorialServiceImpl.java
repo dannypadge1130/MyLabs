@@ -18,5 +18,10 @@ public class TutorialServiceImpl implements TutorialService {
 	public List<TutorialEntry> findAllTutorials() {
 		return tutorialRepository.findAll();
 	}
+
+	@Override
+	public TutorialEntry findTutorial(long tutorialId) {
+		return tutorialRepository.findOne(tutorialId);
+	}
 	
 }

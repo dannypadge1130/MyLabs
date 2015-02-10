@@ -8,4 +8,6 @@ public interface LabService {
 
 	public List<LabEntry> findAllLabs();
 	
+	public LabEntry findLab(long labId);
+	
 }

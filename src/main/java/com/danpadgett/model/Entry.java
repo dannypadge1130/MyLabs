@@ -17,7 +17,8 @@ public abstract class Entry {
 	private String title;
 	private String body;
 	
-	private String imgUrl;
+	private String listImageUrl;
+	private String bannerImageUrl;
 	
 	private String type;
 	
@@ -49,13 +50,13 @@ public abstract class Entry {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	public String getImgUrl() {
-		return imgUrl;
-	}
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
+
+	
+	
 	public String getType() {
 		return this.type;
+	}
+	public long getId() {
+		return this.id;
 	}
 }

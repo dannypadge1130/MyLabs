@@ -12,5 +12,7 @@
 <link rel='stylesheet' media='screen and (min-width : 1224px)' href="<c:url value="/resources/css/main.css"/>" />
 
 <link href="<c:url value="/resources/css/bootstrap-css/bootstrap.min.css"/>" rel="stylesheet"  type="text/css" />
+<link href="<c:url value="/resources/css/bootstrap-css/bootstrap-theme.min.css"/>" rel="stylesheet"  type="text/css" />
+
 <link href="<c:url value="/resources/css/prettify.css"/>" rel="stylesheet" type="text/css">
 <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet" type="text/css">

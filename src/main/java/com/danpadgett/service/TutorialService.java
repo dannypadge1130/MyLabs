@@ -8,4 +8,6 @@ public interface TutorialService {
 
 	public List<TutorialEntry> findAllTutorials();
 	
+	public TutorialEntry findTutorial(long tutorialId);
+	
 }

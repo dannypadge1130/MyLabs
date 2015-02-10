@@ -44,21 +44,23 @@
 		<div class="container flow-container"> 
 			<div ng-repeat="entry in entries | orderBy:createdDate">
 				<div ng-show="type == entry.type || type == '*'" class="fadein fadeout item">
-					<div class="card">
-						<div class="face front">
-							<img height="225px" width="275px" src="{{entry.imgUrl}}"/>
+					<a ng-href='<c:url value="/"/>{{entry.type}}/{{entry.id}}'>
+						<div class="card">
+							<div class="face front">
+								<img height="225px" width="275px" ng-src="{{entry.imgUrl}}" alt="{{entry.title}}"/>
+							</div>
+							<div class="back face center">
+								<span ng-if="entry.createdDate == entry.modifiedDate">
+									<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"medium"}}</em>
+								</span>
+								<span ng-if="entry.createdDate != entry.modifiedDate">
+									<b>{{entry.title}}</b> - <em>edited {{entry.createdDate | date:"medium"}}</em>
+								</span>
+							</div>
 						</div>
-						<div class="back face center">
-							<span ng-if="entry.createdDate == entry.modifiedDate">
-								<b>{{entry.title}}</b> - <em>{{entry.createdDate | date:"medium"}}</em>
-							</span>
-							<span ng-if="entry.createdDate != entry.modifiedDate">
-								<b>{{entry.title}}</b> - <em>edited {{entry.createdDate | date:"medium"}}</em>
-							</span>
-						</div>
-					</div>
+					</a>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</div>
 	
