@@ -15,19 +15,34 @@ body > .container {
     margin: 20px 0;
 }
 
-.navbar .navbar-header .return {
-	margin-top: 10px;
+.navbar .container a {
+	margin-top: 5px;
 }
 
-#filters button {
+.navbar .navbar-collapse .nav.navbar-nav a {
 	border: none;
-	background: none;
 	color: #777;
 	float: left;
 	height: 50px;
 	padding: 15px 10px;
 	font-size: 14px;
 	line-height: 20px;
+}
+
+.navbar .navbar-collapse .right{
+	margin-top: 5px;
+	float: right;
+}
+
+.navbar .navbar-collapse .nav.navbar-nav.right a {
+	color: white;
+}
+
+.container .row .about-profile-picture {
+	height: 300px;
+	width: 220px;
+	margin: 40px 0 20px;
+	box-shadow: 10px 10px 5px #888888;	
 }
 
 .flow-container {

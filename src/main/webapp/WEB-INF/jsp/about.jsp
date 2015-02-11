@@ -29,39 +29,48 @@
 	  </div>
 	</div>
 
-	<div style="margin-top:20px">
-		<div class="container">
-			<div class="page-header">ABOUT</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="about-profile-picture">
+					<img src="<c:url value='/resources/images/blog-profile-pic.jpg'/>" />
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="page-header">ABOUT</div>
+					
+				<div>
+					<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
+					I decided to start this site to help track my ideas and personal work.  I broke this site 
+					down into three sections, articles and blog entries, tutorials, and most importantly different 
+					personal projects I decide to work on.  I will call these personal projects labs.</p>
+				</div>	
 				
-			<div class="container">
-				<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
-				I decided to start this site to help track my ideas and personal work.  I broke this site 
-				down into three sections, articles and blog entries, tutorials, and most importantly different 
-				personal projects I decide to work on.  I will call these personal projects labs.</p>
-			</div>	
-			
-			<div class="container">	
-				<strong>Blog</strong>
-				<p>The idea of this blog is to track my train of thought as I discover new technologies, 
-				and solve different problems.</p>
+				<div>	
+					<strong>Blog</strong>
+					<p>The idea of this blog is to track my train of thought as I discover new technologies, 
+					and solve different problems.</p>
+				</div>
+						
+				<div>
+					<strong>Tutorials</strong>
+					<p>For future reference and contribution to the Web, I plan on creating tutorials for 
+					different problems I have encountered and the steps I took in resolving them.</p>
+				</div>
+						
+				<div>
+					<strong>Labs</strong>
+					<p>In this section I will provide information regarding different personal projects 
+					I am working on or have worked on. These can be small or very large applications.  
+					I plan on providing source code for all these.</p>
+				</div>
+				
+				<div>
+					<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MongoDB</em>
+				</div>
+				<hr>
 			</div>
-					
-			<div class="container">
-				<strong>Tutorials</strong>
-				<p>For future reference and contribution to the Web, I plan on creating tutorials for 
-				different problems I have encountered and the steps I took in resolving them.</p>
-			</div>
-					
-			<div class="container">
-				<strong>Labs</strong>
-				<p>In this section I will provide information regarding different personal projects 
-				I am working on or have worked on. These can be small or very large applications.  
-				I plan on providing source code for all these.</p>
-			</div>
-			
-			<div style="margin-top:20px">
-				<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MongoDB</em>
-			</div>
+			<div class="col-lg-2"></div>
 		</div>
 	</div>
 

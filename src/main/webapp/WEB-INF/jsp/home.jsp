@@ -22,21 +22,18 @@
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		  <div class="container">
 		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
 		      <a href='<c:url value="/"/>' class="navbar-brand">My Labs</a>
 		    </div>
 		    <div class="navbar-collapse collapse">
-		      <ul id="filters" class="nav navbar-nav">
-		      	<li><button ng-click="setType('*')">All</button></li>
-		        <li><button ng-click="setType('blog')">Blogs</button></li>
-		        <li><button ng-click="setType('lab')">Labs</button></li>
-		        <li><button ng-click="setType('tutorial')">Tutorials</button></li>
+		      <ul class="nav navbar-nav">
+		      	<li><a ng-click="setType('*')">All</a></li>
+		        <li><a ng-click="setType('blog')">Blogs</a></li>
+		        <li><a ng-click="setType('lab')">Labs</a></li>
+		        <li><a ng-click="setType('tutorial')">Tutorials</a></li>
 		      </ul>
+		      <div class="right">
+		      	<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
+		      </div>
 		    </div><!--/.nav-collapse -->
 		  </div>
 		</div>
