@@ -51,7 +51,21 @@ public abstract class Entry {
 		this.body = body;
 	}
 
+	public String getListImageUrl() {
+		return listImageUrl;
+	}
 	
+	public void setListImageUrl(String listImageUrl) {
+		this.listImageUrl = listImageUrl;
+	}
+
+	public String getBannerImageUrl() {
+		return bannerImageUrl;
+	}
+
+	public void setBannerImageUrl(String bannerImageUrl) {
+		this.bannerImageUrl = bannerImageUrl;
+	}
 	
 	public String getType() {
 		return this.type;

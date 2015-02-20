@@ -44,7 +44,7 @@
 					<a ng-href='<c:url value="/"/>{{entry.type}}/{{entry.id}}'>
 						<div class="card">
 							<div class="face front">
-								<img height="225px" width="275px" ng-src="{{entry.imgUrl}}" alt="{{entry.title}}"/>
+								<img height="225px" width="275px" ng-src="{{entry.listImageUrl}}" alt="{{entry.title}}"/>
 							</div>
 							<div class="back face center">
 								<span ng-if="entry.createdDate == entry.modifiedDate">
