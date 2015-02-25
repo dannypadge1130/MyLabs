@@ -27,6 +27,7 @@ body > .container {
 	padding: 15px 10px;
 	font-size: 14px;
 	line-height: 20px;
+	cursor: pointer;
 }
 
 .navbar .navbar-collapse .right{
@@ -63,8 +64,8 @@ body > .container {
 	float: left;
 	z-index: 1;
 	perspective: 1000;
+	margin: 0 10px 10px;
 	background-color: #f5f5f5;
-	margin: 0 10px 0 10px;
 }
 
 .flow-container .item .card {
@@ -76,7 +77,6 @@ body > .container {
 
 .flow-container .item:hover .card  {
 	transform: rotateY(180deg);
-  	box-shadow: -5px 5px 5px #aaa;
 }
 
 .face {

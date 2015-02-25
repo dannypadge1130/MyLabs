@@ -1,8 +1,11 @@
 package com.danpadgett.config;
 
+import java.util.EnumSet;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
+import javax.servlet.SessionTrackingMode;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -18,6 +21,8 @@ public class WebAppInitializer implements WebApplicationInitializer {
 		
 		ContextLoaderListener listener = new ContextLoaderListener(context);
 		servletContext.addListener(listener);
+		
+		servletContext.setSessionTrackingModes(EnumSet.of(SessionTrackingMode.COOKIE));
 		
 //		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		DispatcherServlet dispacherServler = new DispatcherServlet(context);
