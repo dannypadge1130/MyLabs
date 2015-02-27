@@ -22,34 +22,35 @@ public class WebAppInitializer implements WebApplicationInitializer {
 		ContextLoaderListener listener = new ContextLoaderListener(context);
 		servletContext.addListener(listener);
 		
+		//remove jsession id from url
 		servletContext.setSessionTrackingModes(EnumSet.of(SessionTrackingMode.COOKIE));
 		
-//		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		//<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		DispatcherServlet dispacherServler = new DispatcherServlet(context);
 		ServletRegistration.Dynamic dispacher = servletContext.addServlet("DispatcherServlet", dispacherServler);
 		
-//		<load-on-startup>1</load-on-startup>
+		//<load-on-startup>1</load-on-startup>
 		dispacher.setLoadOnStartup(1);
 		
-//		<servlet-mapping>
-//			<servlet-name>springDispatcherServlet</servlet-name>
-//			<url-pattern>/</url-pattern>
-//		</servlet-mapping
+		//<servlet-mapping>
+		//	<servlet-name>springDispatcherServlet</servlet-name>
+		//	<url-pattern>/</url-pattern>
+		//</servlet-mapping
 		dispacher.addMapping("/");
 	}
 
 	private AnnotationConfigWebApplicationContext getContext() {
 		
-//		<init-param>
-//			<param-name>contextClass</param-name>
-//			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-//		</init-param>
+		//<init-param>
+		//	<param-name>contextClass</param-name>
+		//	<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+		//</init-param>
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
 		
-//		<init-param>
-//			<param-name>contextConfigLocation</param-name>
-//			<param-value>com.danpadgett.WebConfig</param-value>
-//		</init-param>
+		//<init-param>
+		//	<param-name>contextConfigLocation</param-name>
+		//	<param-value>com.danpadgett.WebConfig</param-value>
+		//</init-param>
 		context.setConfigLocation("com.danpadgett.config.WebConfig");
 		
 		return context;
