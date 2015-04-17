@@ -19,7 +19,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc //enables our java configuration
-@Import({AppConfig.class, MongoConfig.class})
+@Import({MongoConfig.class, SecurityConfig.class})
 @ComponentScan(basePackages={"com.danpadgett.controller", "com.danpadgett.service"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
