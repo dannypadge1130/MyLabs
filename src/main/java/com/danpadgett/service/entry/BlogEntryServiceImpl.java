@@ -1,6 +1,7 @@
-package com.danpadgett.service;
+package com.danpadgett.service.entry;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,18 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 
 	public BlogEntry findBlogEntry(long blogEntryId) {
 		return blogEntryRepository.findOne(blogEntryId);
+	}
+
+	public void deleteBlogEntry(long blogEntryId) {
+		blogEntryRepository.delete(blogEntryId);
+	}
+
+	public void deleteBlogEntry(BlogEntry blogEntry) {
+		blogEntryRepository.delete(blogEntry);
+	}
+
+	public void deleteBlogEntries(Set<BlogEntry> blogEntries) {
+		blogEntryRepository.delete(blogEntries);
 	}
 	
 }

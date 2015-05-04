@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.TutorialEntry;
-import com.danpadgett.service.TutorialService;
+import com.danpadgett.service.entry.TutorialEntryService;
 
 @RestController
 public class TutorialEntryController {
 
 	@Autowired
-	private TutorialService tutorialService;
+	private TutorialEntryService tutorialService;
 	
 	@RequestMapping(value="/api/tutorials", method=RequestMethod.GET) 
 	public List<TutorialEntry> getAllTutorials() {
-		return tutorialService.findAllTutorials();
+		return tutorialService.findAllTutorialEntries();
 	}
 	
 	@RequestMapping(value="/api/tutorial/{tutorialId}", method=RequestMethod.GET)
 	public TutorialEntry getTutorial(@PathVariable long tutorialId, Model model) {
-		return tutorialService.findTutorial(tutorialId);
+		return tutorialService.findTutorialEntry(tutorialId);
 	}
 	
 }

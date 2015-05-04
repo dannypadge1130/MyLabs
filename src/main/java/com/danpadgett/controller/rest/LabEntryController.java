@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.LabEntry;
-import com.danpadgett.service.LabService;
+import com.danpadgett.service.entry.LabEntryService;
 
 @RestController
 public class LabEntryController {
 
 	@Autowired
-	LabService labService;
+	LabEntryService labService;
 	
 	@RequestMapping(value="/api/labs", method=RequestMethod.GET) 
 	public List<LabEntry> getAllLabs() {
-		return labService.findAllLabs();
+		return labService.findAllLabEntries();
 	}
 	
 	@RequestMapping(value="/api/lab/{labId}", method=RequestMethod.GET)
 	public LabEntry getLab(@PathVariable long labId) {
-		return labService.findLab(labId);
+		return labService.findLabEntry(labId);
 	}
 }

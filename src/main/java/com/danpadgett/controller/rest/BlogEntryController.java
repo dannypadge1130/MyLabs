@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.BlogEntry;
-import com.danpadgett.service.BlogEntryService;
+import com.danpadgett.service.entry.BlogEntryService;
 
 @RestController
 public class BlogEntryController {
@@ -25,5 +25,10 @@ public class BlogEntryController {
 	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.GET)
 	public BlogEntry getBlogEntry(@PathVariable long blogEntryId) {
 		return blogEntryService.findBlogEntry(blogEntryId);
+	}
+	
+	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.DELETE)
+	public void deleteBlogEntry(@PathVariable long blogEntryId) {
+		//return blogEntryService.
 	}
 }

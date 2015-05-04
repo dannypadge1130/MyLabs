@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.Entry;
-import com.danpadgett.service.EntryService;
+import com.danpadgett.service.entry.EntryService;
 
 @RestController
 public class EntryController {
