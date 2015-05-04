@@ -34,4 +34,13 @@ public class LabEntryServiceImpl implements LabEntryService {
 	public void deleteLabEntries(Set<LabEntry> labEntries) {
 		labRepository.delete(labEntries);
 	}
+
+	public LabEntry updateLabEntry(long labId) {
+		return updateLabEntry(labRepository.findOne(labId));
+	}
+
+	public LabEntry updateLabEntry(LabEntry lab) {
+		//TODO: update lab
+		return lab;
+	}
 }

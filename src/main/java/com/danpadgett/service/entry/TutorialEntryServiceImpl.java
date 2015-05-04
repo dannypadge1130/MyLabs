@@ -34,5 +34,14 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 	public void deleteTutorialEntries(Set<TutorialEntry> tutorialEntries) {
 		tutorialRepository.delete(tutorialEntries);
 	}
+
+	public TutorialEntry updateTutorialEntry(long tutorialId) {
+		return updateTutorialEntry(tutorialRepository.findOne(tutorialId));
+	}
+
+	public TutorialEntry updateTutorialEntry(TutorialEntry tutorialEntry) {
+		//TODO update tutorialEntry
+		return tutorialEntry;
+	}
 	
 }

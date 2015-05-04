@@ -34,5 +34,14 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 	public void deleteBlogEntries(Set<BlogEntry> blogEntries) {
 		blogEntryRepository.delete(blogEntries);
 	}
+
+	public BlogEntry updateBlogEntry(long blogEntryId) {
+		return updateBlogEntry(blogEntryRepository.findOne(blogEntryId));
+	}
+
+	public BlogEntry updateBlogEntry(BlogEntry blogEntry) {
+		//TODO: update blogEntry
+		return blogEntry;
+	}
 	
 }

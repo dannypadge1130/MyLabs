@@ -16,5 +16,9 @@ public interface TutorialEntryService {
 	public void deleteTutorialEntry(TutorialEntry tutorialEntry);
 	
 	public void deleteTutorialEntries(Set<TutorialEntry> tutorialEntries);
+	
+	public TutorialEntry updateTutorialEntry(long tutorialId);
+	
+	public TutorialEntry updateTutorialEntry(TutorialEntry tutorialEntry);
 
 }

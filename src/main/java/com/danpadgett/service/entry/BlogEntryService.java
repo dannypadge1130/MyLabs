@@ -16,5 +16,9 @@ public interface BlogEntryService {
 	public void deleteBlogEntry(BlogEntry blogEntry);
 	
 	public void deleteBlogEntries(Set<BlogEntry> blogEntries);
+	
+	public BlogEntry updateBlogEntry(long blogEntryId);
+	
+	public BlogEntry updateBlogEntry(BlogEntry blogEntry);
 
 }
