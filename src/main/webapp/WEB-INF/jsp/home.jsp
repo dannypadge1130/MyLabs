@@ -14,12 +14,7 @@
 </head>
 	<body ng-app="app">
 	
-	<jsp:include page="includes/header.jsp"></jsp:include>
 	<jsp:include page="includes/globaljs.jsp"></jsp:include>	
-		
-		
-		
-		
 		
 	<div ng-controller=EntryController>
 		
@@ -37,7 +32,14 @@
 		        <li><a ng-click="setType('tutorial')">Tutorials</a></li>
 		      </ul>
 		      <div class="right">
-		      	<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
+		      	<span>
+		      		<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
+		      	</span>
+		      	<span>
+		      		<sec:authorize access="isFullyAuthenticated()">
+		      			<a href='<c:url value="/logout"/>' class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a>
+		      		</sec:authorize>
+		      	</span>
 		      </div>
 		    </div><!--/.nav-collapse -->
 		  </div>
@@ -65,10 +67,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<sec:authorize access="hasRole('ROLE_ADMIN')">
-		IM LOGGED IN
-	</sec:authorize>
 	
 	<jsp:include page="includes/footer.jsp"></jsp:include>
 	
