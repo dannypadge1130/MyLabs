@@ -36,4 +36,9 @@ public class AppController {
 	public String viewAbout() {
 		return "about";
 	}
+	
+	@RequestMapping(value="/admin/edit", method=RequestMethod.GET)
+	public String edit() {
+		return "admin/edit";
+	}
 }
