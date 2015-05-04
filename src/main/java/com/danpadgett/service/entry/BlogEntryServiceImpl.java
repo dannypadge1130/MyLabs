@@ -1,10 +1,12 @@
 package com.danpadgett.service.entry;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.danpadgett.model.BlogEntry;
 import com.danpadgett.repository.BlogEntryRepository;
@@ -35,13 +37,17 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 		blogEntryRepository.delete(blogEntries);
 	}
 
-	public BlogEntry updateBlogEntry(long blogEntryId) {
-		return updateBlogEntry(blogEntryRepository.findOne(blogEntryId));
-	}
+	@Transactional
+	public BlogEntry updateBlogEntry(long blogEntryId, BlogEntry blogEntry) {
+		
+		BlogEntry oldBlogEntry = blogEntryRepository.findOne(blogEntryId);
+		oldBlogEntry.setBannerImageUrl(blogEntry.getBannerImageUrl());
+		oldBlogEntry.setBody(blogEntry.getBody());
+		oldBlogEntry.setListImageUrl(blogEntry.getListImageUrl());
+		oldBlogEntry.setTitle(blogEntry.getTitle());
+		oldBlogEntry.setModifiedDate(new Date());
 
-	public BlogEntry updateBlogEntry(BlogEntry blogEntry) {
-		//TODO: update blogEntry
-		return blogEntry;
+		return blogEntryRepository.save(oldBlogEntry);
 	}
 	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,8 +28,13 @@ public class BlogEntryController {
 		return blogEntryService.findBlogEntry(blogEntryId);
 	}
 	
-	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/api/admin/blog/{blogEntryId}", method=RequestMethod.DELETE)
 	public void deleteBlogEntry(@PathVariable long blogEntryId) {
-		//return blogEntryService.
+		blogEntryService.deleteBlogEntry(blogEntryId);
+	}
+	
+	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method = RequestMethod.PUT)
+	public BlogEntry updateBlogEntry(@PathVariable long blogEntryId, @RequestBody BlogEntry blogEntry) {
+		return blogEntryService.updateBlogEntry(blogEntryId, blogEntry);
 	}
 }

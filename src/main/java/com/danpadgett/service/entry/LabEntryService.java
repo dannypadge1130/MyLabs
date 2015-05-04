@@ -17,7 +17,5 @@ public interface LabEntryService {
 	
 	public void deleteLabEntries(Set<LabEntry> labEntries);
 	
-	public LabEntry updateLabEntry(long labId);
-	
-	public LabEntry updateLabEntry(LabEntry lab);
+	public LabEntry updateLabEntry(long labId, LabEntry lab);
 }

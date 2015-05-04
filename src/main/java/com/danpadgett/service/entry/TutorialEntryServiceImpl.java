@@ -1,10 +1,12 @@
 package com.danpadgett.service.entry;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.danpadgett.model.TutorialEntry;
 import com.danpadgett.repository.TutorialEntryRepository;
@@ -35,13 +37,17 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 		tutorialRepository.delete(tutorialEntries);
 	}
 
-	public TutorialEntry updateTutorialEntry(long tutorialId) {
-		return updateTutorialEntry(tutorialRepository.findOne(tutorialId));
-	}
-
-	public TutorialEntry updateTutorialEntry(TutorialEntry tutorialEntry) {
-		//TODO update tutorialEntry
-		return tutorialEntry;
+	@Transactional
+	public TutorialEntry updateTutorialEntry(long tutorialId, TutorialEntry tutorialEntry) {
+		
+		TutorialEntry oldTutorialEntry = tutorialRepository.findOne(tutorialId);
+		oldTutorialEntry.setBannerImageUrl(tutorialEntry.getBannerImageUrl());
+		oldTutorialEntry.setBody(tutorialEntry.getBody());
+		oldTutorialEntry.setListImageUrl(tutorialEntry.getListImageUrl());
+		oldTutorialEntry.setTitle(tutorialEntry.getTitle());
+		oldTutorialEntry.setModifiedDate(new Date());
+		
+		return tutorialRepository.save(oldTutorialEntry);
 	}
 	
 }

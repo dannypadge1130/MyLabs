@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.danpadgett.model.BlogEntry;
 import com.danpadgett.model.LabEntry;
 import com.danpadgett.service.entry.LabEntryService;
 
@@ -25,5 +27,15 @@ public class LabEntryController {
 	@RequestMapping(value="/api/lab/{labId}", method=RequestMethod.GET)
 	public LabEntry getLab(@PathVariable long labId) {
 		return labService.findLabEntry(labId);
+	}
+	
+	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.DELETE)
+	public void deleteLab(@PathVariable long labId) {
+		labService.deleteLabEntry(labId);
+	}
+	
+	@RequestMapping(value="/api/admin/lab/{labId}", method = RequestMethod.PUT)
+	public LabEntry updateLabEntry(@PathVariable long labId, @RequestBody LabEntry lab) {
+		return labService.updateLabEntry(labId, lab);
 	}
 }

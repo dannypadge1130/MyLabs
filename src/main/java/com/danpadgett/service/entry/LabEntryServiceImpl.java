@@ -1,10 +1,12 @@
 package com.danpadgett.service.entry;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.danpadgett.model.LabEntry;
 import com.danpadgett.repository.LabEntryRepository;
@@ -35,12 +37,18 @@ public class LabEntryServiceImpl implements LabEntryService {
 		labRepository.delete(labEntries);
 	}
 
-	public LabEntry updateLabEntry(long labId) {
-		return updateLabEntry(labRepository.findOne(labId));
-	}
-
-	public LabEntry updateLabEntry(LabEntry lab) {
-		//TODO: update lab
-		return lab;
+	@Transactional
+	public LabEntry updateLabEntry(long labId, LabEntry lab) {
+		
+		LabEntry oldLab = labRepository.findOne(labId);
+		oldLab.setBannerImageUrl(lab.getBannerImageUrl());
+		oldLab.setBody(lab.getBody());
+		oldLab.setListImageUrl(lab.getListImageUrl());
+		oldLab.setLiveURL(lab.getLiveURL());
+		oldLab.setRepoURL(lab.getRepoURL());
+		oldLab.setTitle(lab.getTitle());
+		oldLab.setModifiedDate(new Date());
+		
+		return labRepository.save(oldLab);
 	}
 }

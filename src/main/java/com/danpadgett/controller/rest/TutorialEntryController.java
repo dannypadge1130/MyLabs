@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +29,13 @@ public class TutorialEntryController {
 		return tutorialService.findTutorialEntry(tutorialId);
 	}
 	
+	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.DELETE)
+	public void deleteTutorial(@PathVariable long tutorialId) {
+		tutorialService.deleteTutorialEntry(tutorialId);
+	}
+	
+	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method = RequestMethod.PUT)
+	public TutorialEntry updateTutorial(@PathVariable long tutorialId, @RequestBody TutorialEntry tutorial) {
+		return tutorialService.updateTutorialEntry(tutorialId, tutorial);
+	}
 }
