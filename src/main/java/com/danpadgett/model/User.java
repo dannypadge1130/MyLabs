@@ -1,5 +1,8 @@
 package com.danpadgett.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -13,7 +16,8 @@ public class User {
 	PasswordEncoder passwordEncoder;
 	
 	@Id
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private String id;
 	
     @Indexed(unique=true)
     private String username;
@@ -31,7 +35,7 @@ public class User {
         this.role = role;
     }
  
-    public Long getId() { 
+    public String getId() { 
     	return id; 
     }
     

@@ -21,11 +21,11 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 		return tutorialRepository.findAll();
 	}
 
-	public TutorialEntry findTutorialEntry(long tutorialEntryId) {
+	public TutorialEntry findTutorialEntry(String tutorialEntryId) {
 		return tutorialRepository.findOne(tutorialEntryId);
 	}
 	
-	public void deleteTutorialEntry(long tutorialEntryId) {
+	public void deleteTutorialEntry(String tutorialEntryId) {
 		tutorialRepository.delete(tutorialEntryId);
 	}
 	
@@ -38,7 +38,7 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 	}
 
 	@Transactional
-	public TutorialEntry updateTutorialEntry(long tutorialId, TutorialEntry tutorialEntry) {
+	public TutorialEntry updateTutorialEntry(String tutorialId, TutorialEntry tutorialEntry) {
 		
 		TutorialEntry oldTutorialEntry = tutorialRepository.findOne(tutorialId);
 		oldTutorialEntry.setBannerImageUrl(tutorialEntry.getBannerImageUrl());

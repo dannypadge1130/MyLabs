@@ -21,11 +21,11 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 		return blogEntryRepository.findAll();
 	}
 
-	public BlogEntry findBlogEntry(long blogEntryId) {
+	public BlogEntry findBlogEntry(String blogEntryId) {
 		return blogEntryRepository.findOne(blogEntryId);
 	}
 
-	public void deleteBlogEntry(long blogEntryId) {
+	public void deleteBlogEntry(String blogEntryId) {
 		blogEntryRepository.delete(blogEntryId);
 	}
 
@@ -38,7 +38,7 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 	}
 
 	@Transactional
-	public BlogEntry updateBlogEntry(long blogEntryId, BlogEntry blogEntry) {
+	public BlogEntry updateBlogEntry(String blogEntryId, BlogEntry blogEntry) {
 		
 		BlogEntry oldBlogEntry = blogEntryRepository.findOne(blogEntryId);
 		oldBlogEntry.setBannerImageUrl(blogEntry.getBannerImageUrl());
@@ -48,6 +48,10 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 		oldBlogEntry.setModifiedDate(new Date());
 
 		return blogEntryRepository.save(oldBlogEntry);
+	}
+
+	public BlogEntry createBlogEntry(BlogEntry blogEntry) {
+		return blogEntryRepository.save(blogEntry);
 	}
 	
 }

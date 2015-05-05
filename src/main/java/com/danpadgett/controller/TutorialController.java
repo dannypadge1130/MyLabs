@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TutorialController {
 
 	@RequestMapping(value="/tutorial/view/{tutorialId}", method=RequestMethod.GET)
-	public String view(@PathVariable long tutorialId, Model model) {
+	public String view(@PathVariable String tutorialId, Model model) {
 		model.addAttribute("id", tutorialId);
 		return "/tutorial/view";
 	}
 	
 	@RequestMapping(value="/tutorial/admin/edit/{tutorialId}", method=RequestMethod.GET)
-	public String edit(@PathVariable long tutorialId, Model model) {
+	public String edit(@PathVariable String tutorialId, Model model) {
 		model.addAttribute("id", tutorialId);
 		return "/tutorial/admin/edit";
 	}

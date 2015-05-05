@@ -9,14 +9,14 @@ public interface TutorialEntryService {
 
 	public List<TutorialEntry> findAllTutorialEntries();
 	
-	public TutorialEntry findTutorialEntry(long tutorialId);
+	public TutorialEntry findTutorialEntry(String tutorialId);
 	
-	public void deleteTutorialEntry(long tutorialId);
+	public void deleteTutorialEntry(String tutorialId);
 	
 	public void deleteTutorialEntry(TutorialEntry tutorialEntry);
 	
 	public void deleteTutorialEntries(Set<TutorialEntry> tutorialEntries);
 	
-	public TutorialEntry updateTutorialEntry(long tutorialId, TutorialEntry tutorialEntry);
+	public TutorialEntry updateTutorialEntry(String tutorialId, TutorialEntry tutorialEntry);
 
 }

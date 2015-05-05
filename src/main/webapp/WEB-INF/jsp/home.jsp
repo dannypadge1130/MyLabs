@@ -48,7 +48,7 @@
 		<div class="container flow-container"> 
 			<div ng-repeat="entry in entries | orderBy:createdDate">
 				<div ng-show="type == entry.type || type == '*'" class="fadein fadeout item">
-					<a ng-href='<c:url value="/"/>{{entry.type}}/{{entry.id}}'>
+					<a ng-href='<c:url value="/"/>{{entry.type}}/view/{{entry.id}}'>
 						<div class="card">
 							<div class="face front">
 								<img height="225px" width="275px" ng-src="{{entry.listImageUrl}}" alt="{{entry.title}}"/>

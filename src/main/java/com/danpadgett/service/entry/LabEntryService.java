@@ -9,13 +9,13 @@ public interface LabEntryService {
 
 	public List<LabEntry> findAllLabEntries();
 	
-	public LabEntry findLabEntry(long labId);
+	public LabEntry findLabEntry(String labId);
 	
-	public void deleteLabEntry(long labId);
+	public void deleteLabEntry(String labId);
 	
 	public void deleteLabEntry(LabEntry lab);
 	
 	public void deleteLabEntries(Set<LabEntry> labEntries);
 	
-	public LabEntry updateLabEntry(long labId, LabEntry lab);
+	public LabEntry updateLabEntry(String labId, LabEntry lab);
 }

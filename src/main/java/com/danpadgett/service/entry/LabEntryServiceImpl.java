@@ -21,11 +21,11 @@ public class LabEntryServiceImpl implements LabEntryService {
 		return labRepository.findAll();
 	}
 
-	public LabEntry findLabEntry(long labEntryId) {
+	public LabEntry findLabEntry(String labEntryId) {
 		return labRepository.findOne(labEntryId);
 	}
 	
-	public void deleteLabEntry(long labEntryId) {
+	public void deleteLabEntry(String labEntryId) {
 		labRepository.delete(labEntryId);
 	}
 	
@@ -38,7 +38,7 @@ public class LabEntryServiceImpl implements LabEntryService {
 	}
 
 	@Transactional
-	public LabEntry updateLabEntry(long labId, LabEntry lab) {
+	public LabEntry updateLabEntry(String labId, LabEntry lab) {
 		
 		LabEntry oldLab = labRepository.findOne(labId);
 		oldLab.setBannerImageUrl(lab.getBannerImageUrl());
@@ -51,4 +51,6 @@ public class LabEntryServiceImpl implements LabEntryService {
 		
 		return labRepository.save(oldLab);
 	}
+	
+	
 }

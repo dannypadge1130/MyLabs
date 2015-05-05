@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.danpadgett.model.BlogEntry;
 
 @Repository
-public interface BlogEntryRepository extends MongoRepository<BlogEntry, Long> {
+public interface BlogEntryRepository extends MongoRepository<BlogEntry, String> {
 	
 }

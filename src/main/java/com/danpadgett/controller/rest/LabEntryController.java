@@ -25,17 +25,17 @@ public class LabEntryController {
 	}
 	
 	@RequestMapping(value="/api/lab/{labId}", method=RequestMethod.GET)
-	public LabEntry getLab(@PathVariable long labId) {
+	public LabEntry getLab(@PathVariable String labId) {
 		return labService.findLabEntry(labId);
 	}
 	
 	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.DELETE)
-	public void deleteLab(@PathVariable long labId) {
+	public void deleteLab(@PathVariable String labId) {
 		labService.deleteLabEntry(labId);
 	}
 	
 	@RequestMapping(value="/api/admin/lab/{labId}", method = RequestMethod.PUT)
-	public LabEntry updateLabEntry(@PathVariable long labId, @RequestBody LabEntry lab) {
+	public LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
 		return labService.updateLabEntry(labId, lab);
 	}
 }
