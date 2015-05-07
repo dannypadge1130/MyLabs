@@ -11,6 +11,11 @@ public class AppController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String viewApplication() {
+		return "index";
+	}
+	
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public String viewHome() {
 		return "home";
 	}
 	

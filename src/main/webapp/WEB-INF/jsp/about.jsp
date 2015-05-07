@@ -18,7 +18,7 @@
 	<jsp:include page="includes/globaljs.jsp"></jsp:include>
 
   </head>
-  <body>
+  <body class="about">
 		
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -39,7 +39,7 @@
 			<div class="col-lg-7">
 				<div class="page-header">ABOUT</div>
 					
-				<div>
+				<div class="about">
 					<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
 					I decided to start this site to help track my ideas and personal work.  I broke this site 
 					down into three sections, articles and blog entries, tutorials, and most importantly different 
