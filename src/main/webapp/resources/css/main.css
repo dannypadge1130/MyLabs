@@ -1,22 +1,17 @@
 html {
-    height: 100%;
+    min-height: 100%;
     position: relative;
 }
 
 body {
-    height: 100%;
     background-color: #042037;
 }
 
-.about body {
-    background-color: #FFFFFF;
-}
-
-
 body > .container {
-    padding: 60px 15px 0;
+    padding-top: 60px;
 }
 
+/* Homepage Text */
 .v-center {
   margin-top:7%;
 }
@@ -30,19 +25,13 @@ body > .container {
 	color:#FFFFFF;
 }
 
-.container-full {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  min-height:100%;
-  color:#eee;
-  overflow:hidden;
+/* home page button */
+.welcome-button a {
+	width: 250px;
 }
 
-.container .text-muted {
-    margin: 20px 0;
-}
 
+/* Header navigation */
 .navbar .container a {
 	margin-top: 5px;
 }
@@ -67,6 +56,11 @@ body > .container {
 	color: white;
 }
 
+.container .entry {
+  	background-color: #FFFFFF;
+}
+
+/* About Page Profile Picture */
 .container .row .about-profile-picture {
 	height: 300px;
 	width: 220px;
@@ -79,86 +73,12 @@ body > .container {
 	height: 100%;	
 }
 
-.flow-container {
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
-
-.flow-container .item {
-	position: relative;	
-	max-width: 100%;
-	height: 225px;
-	width: 275px;
-	float: left;
-	z-index: 1;
-	perspective: 1000;
-	margin: 0 10px 10px;
-	background-color: #f5f5f5;
-}
-
-.flow-container .item .card {
-	width: 100%;
-	height: 100%;
-	transform-style: preserve-3d;
-  	transition: all 0.3s linear;
-}
-
-.flow-container .item:hover .card  {
-	transform: rotateY(180deg);
-}
-
-.face {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-}
-
-.face.back {
-	display: block;
-	transform: rotateY(180deg);
-	/*box-sizing: border-box;*/
-	padding: 10px;
-	color: white;
-	text-align: center;
-	background-color: #aaa;
-}
-
-.footer {
-    background-color: #FFFFFF;
-    bottom: 0;
-    height: 64px;
-    position: absolute;
-    width: 100%;
-}
-
-.footer > .container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
+/* Code font size */
 code {
     font-size: 80%;
 }
 
-.footer-icon-wrapper {
-	max-width: 50%;
-	float: right;
-}
-
-.footer-icon-wrapper img {
-	height: 64px;
-	width: 64px;
-	margin-left: 20px;
-}
-
-.footer-quote {
-    font-style: italic;
-    float: left;
-    display: inline-block;
-    margin-top: 30px;
-}
-
+/* Links on Lab Page */
 .lab-icons {
 	margin-top: 10px
 }
@@ -173,4 +93,39 @@ code {
 
 .lab-icons .icon img {
 	height: 20px
+}
+
+/* Footer */ 
+.footer {
+    background-color: #FFFFFF;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* Footer Container */
+.footer > .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Footer social link wrapper */
+.footer-icon-wrapper {
+	max-width: 50%;
+	float: right;
+}
+
+/* Footer Social Icons */
+.footer-icon-wrapper img {
+	height: 64px;
+	width: 64px;
+	margin-left: 20px;
+}
+
+/* Footer Quote  */
+.footer-quote {
+	max-width: 50%;
+    font-style: italic;
+    float: left;
+    margin-top: 30px;
 }

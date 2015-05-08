@@ -19,7 +19,7 @@
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		  <div class="container">
 		    <div class="navbar-header">
-		      <a href='<c:url value="/"/>' class="btn btn-primary return"><span class="glyphicon glyphicon-arrow-left"></span> Return</a>
+		      <a href='<c:url value="/home"/>' class="btn btn-primary return"><span class="glyphicon glyphicon-arrow-left"></span> Return</a>
 		    </div>
 		  </div>
 		</div>
