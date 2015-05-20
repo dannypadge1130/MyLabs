@@ -43,34 +43,34 @@
 	  </div>
 	</div>
 		
-	<div class="container" ng-repeat="entry in entries | orderBy:createdDate"> 
-  		<div class="row">
-    		<div class="col-md-8 entry"> 
-          		<br>
-				<div class="col-md-10 col-sm-9">
-             		<a ng-href='<c:url value="/"/>{{entry.type}}/view/{{entry.id}}'>
-		        		<h3>{{entry.title}}</h3>
-		           	</a>
-	              	<div class="row">
-                		<div class="col-xs-9">
-		                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-			                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-			                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-			                  Aliquam in felis sit amet augue.</p>
-					                  
+	<div class="container"> 
+  		<div class="row top-buffer" ng-repeat="entry in entries | orderBy:createdDate">
+			<div class="col-xs-10 col-md-8 col-md-offset-2 entry">
+            		<a ng-href='<c:url value="/"/>{{entry.type}}/view/{{entry.id}}'>
+	        		<h3>{{entry.title}}</h3>
+	           	</a>
+              	<div class="row">
+               		<div class="col-xs-12">
+               			<!-- Need small description of what i'm building 300 character -->
+	                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+		                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+		                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+		                  Aliquam in felis sit amet augue.</p>
+				             
+		                <div>
 			                <span ng-if="entry.createdDate == entry.modifiedDate">
 								<em>{{entry.createdDate | date:"medium"}}</em>
 							</span>
 							<span ng-if="entry.createdDate != entry.modifiedDate">
 								<em>edited {{entry.createdDate | date:"medium"}}</em>
 							</span>
-					                  
-	                  		<p class="lead"><button class="btn btn-default">Read More</button></p>
-						</div>
-                		<div class="col-xs-3"></div>
+				        </div>      
+				        <br>   
+				                  
+                  		<p class="lead"><button class="btn btn-default">Read More</button></p>
 					</div>
-	              	<br><br>
 				</div>
+              	<br><br>
 			</div>
 		</div>	
 	</div>

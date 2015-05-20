@@ -12,7 +12,7 @@
 <title>MyLabs - Dan Padgett</title>
 </head>
 	<body>
-		<div class="container">
+		<div class="container-full">
 		
 		      <div class="row">
 		       
@@ -23,13 +23,14 @@
 		          
 		          <br><br>
 		          
-		          <div class="col-lg-12 welcome-button">
-		          	<a href="<c:url value='/home'/>" class="btn btn-lg btn-success">ENTER</a>
+		          <div class="col-lg-12">
+		          	<a href="<c:url value='/home'/>" style="width:25%;" class="btn btn-lg btn-success">ENTER</a>
 		          </div>
 		        </div>
 		        
 		      </div> <!-- /row -->
 		</div> <!-- /container full -->
+		
 	</body>
 	
 	<jsp:include page="includes/footer.jsp"></jsp:include>
