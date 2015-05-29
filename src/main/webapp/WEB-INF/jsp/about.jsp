@@ -36,7 +36,7 @@
 					<img src="<c:url value='/resources/images/blog-profile-pic.jpg'/>" />
 				</div>
 			</div>
-			<div class="col-lg-7">
+			<div class="col-lg-7 entry">
 				<div class="page-header">ABOUT</div>
 					
 				<div class="about">
