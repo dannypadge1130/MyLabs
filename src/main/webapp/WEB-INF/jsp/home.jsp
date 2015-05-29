@@ -15,42 +15,39 @@
 	<body ng-app="app" ng-controller=EntryController>
 	
 	<jsp:include page="includes/globaljs.jsp"></jsp:include>	
-		
- 	<div class="navbar-wrapper">
-    	<div class="container">
-        	<div class="navbar navbar-default navbar-static-top" role="navigation">
-          		<div class="container">
-            		<div class="navbar-header">
-              			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                			<span class="sr-only">Toggle navigation</span>
-                			<span class="icon-bar"></span>  
-                			<span class="icon-bar"></span>
-                			<span class="icon-bar"></span>
-              			</button>
-              			<a href='<c:url value="/home"/>' class="navbar-brand">My Labs</a>
-            		</div>
-            	<div class="collapse navbar-collapse">
-			    	<ul class="nav navbar-nav">
-			      		<li><a ng-click="setType('*')">All</a></li>
-			        	<li><a ng-click="setType('blog')">Blogs</a></li>
-			        	<li><a ng-click="setType('lab')">Labs</a></li>
-			        	<li><a ng-click="setType('tutorial')">Tutorials</a></li>
-			      	</ul>
-			      	<ul class="nav navbar-nav navbar-right">
-			      		<li>
-			      			<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
-			      		</li>
-			      		<li>
-			      			<sec:authorize access="isFullyAuthenticated()">
-			      				<a href='<c:url value="/logout"/>' class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a>
-			      			</sec:authorize>
-			      		</li>
-			      	</ul>
-            	</div>
-     		</div>
+    
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href='<c:url value="/home"/>' class="navbar-brand">My Labs</a>
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+      		<li><a ng-click="setType('*')">All</a></li>
+        	<li><a ng-click="setType('blog')">Blogs</a></li>
+        	<li><a ng-click="setType('lab')">Labs</a></li>
+        	<li><a ng-click="setType('tutorial')">Tutorials</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+      		<li>
+      			<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
+      		</li>
+      		<li>
+      			<sec:authorize access="isFullyAuthenticated()">
+      				<a href='<c:url value="/logout"/>' class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a>
+      			</sec:authorize>
+      		</li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
 		
 	<div class="container"> 
   		<div class="row top-buffer" ng-repeat="entry in entries | orderBy:createdDate">

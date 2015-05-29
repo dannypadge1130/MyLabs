@@ -38,7 +38,6 @@ body > .container {
 
 .navbar .navbar-collapse .nav.navbar-nav a {
 	border: none;
-	color: #777;
 	float: left;
 	height: 50px;
 	padding: 15px 10px;
@@ -47,13 +46,14 @@ body > .container {
 	cursor: pointer;
 }
 
+.navbar-default .navbar-nav > li > .btn {
+	color: #FFFFFF;
+	margin-left: 5px;
+}
+
 .navbar .navbar-collapse .right{
 	margin-top: 5px;
 	float: right;
-}
-
-.navbar .navbar-collapse .nav.navbar-nav.right a {
-	color: white;
 }
 
 .container .entry {
