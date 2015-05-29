@@ -78,8 +78,8 @@ code {
 .footer {
     background-color: #FFFFFF;
     bottom: 0;
-    position: absolute;
     width: 100%;
+    margin-top:10px;
 }
 
 /* Footer Container */
