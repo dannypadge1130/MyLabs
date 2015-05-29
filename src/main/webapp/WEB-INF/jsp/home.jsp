@@ -37,11 +37,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
       		<li>
-      			<a href='<c:url value="/about"/>' class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> About</a>
+      			<a href='<c:url value="/about"/>'> About</a>
       		</li>
       		<li>
       			<sec:authorize access="isFullyAuthenticated()">
-      				<a href='<c:url value="/logout"/>' class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a>
+      				<a href='<c:url value="/logout"/>'> Logout</a>
       			</sec:authorize>
       		</li>
           </ul>

@@ -30,35 +30,9 @@ body > .container {
 	width: 250px;
 }
 
-
-/* Header navigation */
-.navbar .container a {
-	margin-top: 5px;
-}
-
-.navbar .navbar-collapse .nav.navbar-nav a {
-	border: none;
-	float: left;
-	height: 50px;
-	padding: 15px 10px;
-	font-size: 14px;
-	line-height: 20px;
-	cursor: pointer;
-}
-
-.navbar-default .navbar-nav > li > .btn {
-	color: #FFFFFF;
-	margin-left: 5px;
-}
-
-.navbar .navbar-collapse .right{
-	margin-top: 5px;
-	float: right;
-}
-
 .container .entry {
   	background-color: #FFFFFF;
-  	border-radius:10px;
+  	border-radius: 10px;
 }
 
 .top-buffer { 
