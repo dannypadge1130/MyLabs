@@ -44,9 +44,10 @@ body > .container {
 	width: 250px;
 }
 
-.container {
-	position: relative; 
+.container .new-entry-options a {
+	margin-left: 20px;
 }
+
 
 .container .entry {
   	background-color: #FFFFFF;

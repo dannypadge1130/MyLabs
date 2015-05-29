@@ -15,6 +15,11 @@ public class TutorialController {
 		return "/tutorial/view";
 	}
 	
+	@RequestMapping(value="/tutorial/admin/create", method=RequestMethod.GET)
+	public String create() {
+		return "/tutorial/admin/create";
+	}
+	
 	@RequestMapping(value="/tutorial/admin/edit/{tutorialId}", method=RequestMethod.GET)
 	public String edit(@PathVariable String tutorialId, Model model) {
 		model.addAttribute("id", tutorialId);

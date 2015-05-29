@@ -22,4 +22,9 @@ public class AppController {
 		return "about";
 	}
 	
+	@RequestMapping(value="/admin/newEntry", method=RequestMethod.GET)
+	public String viewNewEntry() {
+		return "newEntry";
+	}
+	
 }

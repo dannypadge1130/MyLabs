@@ -15,6 +15,11 @@ public class LabController {
 		return "/lab/view";
 	}
 	
+	@RequestMapping(value="/lab/admin/create", method=RequestMethod.GET)
+	public String create() {
+		return "/lab/admin/create";
+	}
+	
 	@RequestMapping(value="/lab/admin/edit/{labId}", method=RequestMethod.GET)
 	public String edit(@PathVariable String labId, Model model) {
 		model.addAttribute("id", labId);
