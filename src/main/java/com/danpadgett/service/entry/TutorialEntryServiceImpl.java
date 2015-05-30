@@ -43,11 +43,16 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 		TutorialEntry oldTutorialEntry = tutorialRepository.findOne(tutorialId);
 		oldTutorialEntry.setBannerImageUrl(tutorialEntry.getBannerImageUrl());
 		oldTutorialEntry.setBody(tutorialEntry.getBody());
-		oldTutorialEntry.setListImageUrl(tutorialEntry.getListImageUrl());
+		oldTutorialEntry.setDescription(tutorialEntry.getDescription());
 		oldTutorialEntry.setTitle(tutorialEntry.getTitle());
 		oldTutorialEntry.setModifiedDate(new Date());
 		
 		return tutorialRepository.save(oldTutorialEntry);
+	}
+	
+	@Transactional
+	public TutorialEntry createTutorialEntry(TutorialEntry tutorialEntry) {
+		return tutorialRepository.save(tutorialEntry);
 	}
 	
 }

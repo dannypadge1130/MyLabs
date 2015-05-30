@@ -35,7 +35,12 @@ public class TutorialEntryController {
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method = RequestMethod.PUT)
-	public TutorialEntry updateTutorial(@PathVariable String tutorialId, @RequestBody TutorialEntry tutorial) {
-		return tutorialService.updateTutorialEntry(tutorialId, tutorial);
+	public TutorialEntry updateTutorial(@PathVariable String tutorialId, @RequestBody TutorialEntry tutorialEntry) {
+		return tutorialService.updateTutorialEntry(tutorialId, tutorialEntry);
+	}
+	
+	@RequestMapping(value="/api/admin/tutorial", method = RequestMethod.POST)
+	public TutorialEntry createTutorial(@RequestBody TutorialEntry tutorialEntry) {
+		return tutorialService.createTutorialEntry(tutorialEntry);
 	}
 }

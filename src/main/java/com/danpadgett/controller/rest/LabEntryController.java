@@ -38,4 +38,9 @@ public class LabEntryController {
 	public LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
 		return labService.updateLabEntry(labId, lab);
 	}
+	
+	@RequestMapping(value="/api/admin/lab", method = RequestMethod.POST)
+	public LabEntry createLabEntry(@RequestBody LabEntry lab) {
+		return labService.createLabEntry(lab);
+	}
 }

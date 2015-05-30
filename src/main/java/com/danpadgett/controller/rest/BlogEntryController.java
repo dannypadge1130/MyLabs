@@ -2,6 +2,7 @@ package com.danpadgett.controller.rest;
 
 import java.util.List;
 
+import org.apache.mina.filter.reqres.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,5 +37,10 @@ public class BlogEntryController {
 	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method = RequestMethod.PUT)
 	public BlogEntry updateBlogEntry(@PathVariable String blogEntryId, @RequestBody BlogEntry blogEntry) {
 		return blogEntryService.updateBlogEntry(blogEntryId, blogEntry);
+	}
+	
+	@RequestMapping(value="/api/admin/blog", method=RequestMethod.POST)
+	public BlogEntry createBlogEntry(@RequestBody BlogEntry blogEntry) {
+		return blogEntryService.createBlogEntry(blogEntry);
 	}
 }

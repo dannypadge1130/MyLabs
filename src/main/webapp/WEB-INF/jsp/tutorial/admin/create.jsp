@@ -10,6 +10,8 @@
 		
 		<jsp:include page="../../includes/globalcss.jsp"></jsp:include>
 		
+		<script type="text/javascript" src="<c:url value="/resources/ckeditor/ckeditor.js"/>"></script>
+		
 		<title>Create New Tutorial Entry</title>
 	</head>
 	<body>

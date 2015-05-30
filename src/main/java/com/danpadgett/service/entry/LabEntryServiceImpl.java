@@ -43,7 +43,7 @@ public class LabEntryServiceImpl implements LabEntryService {
 		LabEntry oldLab = labRepository.findOne(labId);
 		oldLab.setBannerImageUrl(lab.getBannerImageUrl());
 		oldLab.setBody(lab.getBody());
-		oldLab.setListImageUrl(lab.getListImageUrl());
+		oldLab.setDescription(lab.getDescription());
 		oldLab.setLiveURL(lab.getLiveURL());
 		oldLab.setRepoURL(lab.getRepoURL());
 		oldLab.setTitle(lab.getTitle());
@@ -52,5 +52,9 @@ public class LabEntryServiceImpl implements LabEntryService {
 		return labRepository.save(oldLab);
 	}
 	
+	@Transactional
+	public LabEntry createLabEntry(LabEntry lab) {
+		return labRepository.save(lab);
+	}
 	
 }

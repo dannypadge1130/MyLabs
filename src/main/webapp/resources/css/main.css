@@ -8,6 +8,10 @@ body {
     padding-bottom: 80px;
 }
 
+body.admin {
+	background-color: #FFFFFF;
+}
+
 @media only screen and (max-width : 1200px) {
 	body {
 	    padding-bottom: 100px;
@@ -47,7 +51,6 @@ body > .container {
 .container .new-entry-options a {
 	margin-left: 20px;
 }
-
 
 .container .entry {
   	background-color: #FFFFFF;

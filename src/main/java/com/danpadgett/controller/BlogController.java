@@ -31,6 +31,7 @@ public class BlogController {
 	
 	@RequestMapping(value="/blog/admin/edit/{blogEntryId}", method=RequestMethod.GET)
 	public String edit(@PathVariable String blogEntryId, Model model) {
+		
 		model.addAttribute("id", blogEntryId);
 		
 		BlogEntry be = new BlogEntry();
@@ -38,7 +39,7 @@ public class BlogController {
 		be.setBody("THIS IS SOME TEXT");
 		be.setCreatedDate(new Date());
 		be.setModifiedDate(new Date());
-		be.setListImageUrl("https://cdn1.iconfinder.com/data/icons/simple-icons/4096/apple-4096-black.png");
+		//be.setListImageUrl("https://cdn1.iconfinder.com/data/icons/simple-icons/4096/apple-4096-black.png");
 		be.setTitle("TEST TITLE");
 		blogEntryService.createBlogEntry(be);
 		

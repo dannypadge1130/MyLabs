@@ -19,4 +19,5 @@ public interface TutorialEntryService {
 	
 	public TutorialEntry updateTutorialEntry(String tutorialId, TutorialEntry tutorialEntry);
 
+	public TutorialEntry createTutorialEntry(TutorialEntry tutorialEntry);
 }

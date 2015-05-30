@@ -19,9 +19,9 @@ public abstract class Entry {
 	private Date modifiedDate;
 	
 	private String title;
+	private String description;
 	private String body;
 	
-	private String listImageUrl;
 	private String bannerImageUrl;
 	
 	private String type;
@@ -55,14 +55,6 @@ public abstract class Entry {
 		this.body = body;
 	}
 
-	public String getListImageUrl() {
-		return listImageUrl;
-	}
-	
-	public void setListImageUrl(String listImageUrl) {
-		this.listImageUrl = listImageUrl;
-	}
-
 	public String getBannerImageUrl() {
 		return bannerImageUrl;
 	}
@@ -76,5 +68,13 @@ public abstract class Entry {
 	}
 	public String getId() {
 		return this.id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

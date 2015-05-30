@@ -18,4 +18,6 @@ public interface LabEntryService {
 	public void deleteLabEntries(Set<LabEntry> labEntries);
 	
 	public LabEntry updateLabEntry(String labId, LabEntry lab);
+	
+	public LabEntry createLabEntry(LabEntry lab);
 }
