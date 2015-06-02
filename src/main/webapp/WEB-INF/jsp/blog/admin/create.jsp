@@ -65,10 +65,7 @@
 				</form>
 	        </div>
 		</div>
-		
 		<jsp:include page="../../includes/footer.jsp"></jsp:include>	
-	
 		<jsp:include page="../../includes/globaljs.jsp"></jsp:include>	
-	
 	</body>
 </html>

@@ -26,10 +26,7 @@
 	              	<div class="row">
 	               		<div class="col-xs-12">
 	               			<!-- Need small description of what i'm building 300 character -->
-		                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-			                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-			                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-			                  Aliquam in felis sit amet augue.</p>
+		                	<p>{{entry.description}}</p>
 					             
 			                <div>
 				                <span ng-if="entry.createdDate == entry.modifiedDate">
@@ -40,9 +37,14 @@
 								</span>
 					        </div>      
 					        <br>   
-					                  
-	                  		<p class="lead"><a ng-href='<c:url value="/"/>{{entry.type}}/view/{{entry.id}}'><span class="btn btn-default">Read More</span></a></p>
-						</div>
+					        
+					        <div>      
+		                  		<a ng-href='<c:url value="/"/>{{entry.type}}/view/{{entry.id}}'><span class="btn btn-default">Read More</span></a>
+		                  		<sec:authorize access="isFullyAuthenticated()">
+		                  			<a ng-href='<c:url value="/"/>{{entry.type}}/admin/edit/{{entry.id}}'><span class="btn btn-default">Edit</span></a>
+		                  		</sec:authorize>
+	                  		</div>
+	                  	</div>
 					</div>
 	              	<br><br>
 				</div>
