@@ -27,7 +27,7 @@
 						<!-- Form Name -->
 						<legend>Edit - {{entry.title}}</legend>
 						
-						<!-- Text input-->
+						<!-- Title Input-->
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
@@ -35,7 +35,7 @@
 							 </div>
 						</div>
 						
-						<!-- Textarea -->
+						<!-- Short Description -->
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
@@ -43,7 +43,7 @@
 						  	</div>
 						</div>
 						
-						<!-- Textarea -->
+						<!-- Body -->
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">

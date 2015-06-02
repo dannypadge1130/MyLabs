@@ -17,9 +17,7 @@
   </head>
   
   <body>
-
 		<jsp:include page="../../includes/header.jsp"></jsp:include>	
-
 		<div class="container">
 			<div class="row entry">
 			
@@ -37,7 +35,24 @@
 							 </div>
 						</div>
 						
-						<!-- Textarea -->
+							
+						<!-- LiveUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="liveUrl">Live URL</label>
+							<div class="controls">
+								<input id="liveUrl" name="liveUrl" type="text" value="{{entry.liveUrl}}" placeholder="Live URL" class="form-control">
+							 </div>
+						</div>
+						
+						<!-- RepoUrl Input -->
+						<div class="control-group">
+							<label class="control-label" for="repoUrl">Repository URL</label>
+							<div class="controls">
+								<input id="repoUrl" name="repoUrl" type="text" value="{{entry.repoUrl}}" placeholder="Repository URL" class="form-control">
+							 </div>
+						</div>
+						
+						<!-- Short Description -->
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
@@ -45,7 +60,7 @@
 						  	</div>
 						</div>
 						
-						<!-- Textarea -->
+						<!-- Body -->
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">

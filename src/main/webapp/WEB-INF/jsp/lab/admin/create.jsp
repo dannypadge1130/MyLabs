@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<jsp:include page="../../includes/header.jsp"></jsp:include>	
-
+		
 		<div class="container">
 			<div class="row entry">
 			
@@ -26,27 +26,43 @@
 						<!-- Form Name -->
 						<legend>Create Lab Entry</legend>
 						
-						<!-- Text input-->
+						<!-- Title input-->
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" placeholder="Blog Title" class=" form-control" required="">
+								<input id="title" name="title" type="text" placeholder="Blog Title" class="form-control" required="required">
+							 </div>
+						</div>
+	
+						<!-- LiveUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="liveUrl">Live URL</label>
+							<div class="controls">
+								<input id="liveUrl" name="liveUrl" type="text" placeholder="Live URL" class="form-control">
 							 </div>
 						</div>
 						
-						<!-- Textarea -->
+						<!-- RepoUrl Input -->
+						<div class="control-group">
+							<label class="control-label" for="repoUrl">Repository URL</label>
+							<div class="controls">
+								<input id="repoUrl" name="repoUrl" type="text" placeholder="Repository URL" class="form-control">
+							 </div>
+						</div>
+						
+						<!-- Short Description -->
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description">Short Description</textarea>
+						    	<textarea class="form-control" id="description" name="description" required="required">Short Description</textarea>
 						  	</div>
 						</div>
 						
-						<!-- Textarea -->
+						<!-- Body -->
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80"></textarea>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" required="required"></textarea>
 					            <script>
 					                CKEDITOR.replace( 'body' );
 					            </script>
