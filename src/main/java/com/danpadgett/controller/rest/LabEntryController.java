@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.danpadgett.model.BlogEntry;
 import com.danpadgett.model.LabEntry;
 import com.danpadgett.service.entry.LabEntryService;
 
@@ -20,12 +20,12 @@ public class LabEntryController {
 	LabEntryService labService;
 	
 	@RequestMapping(value="/api/labs", method=RequestMethod.GET) 
-	public List<LabEntry> getAllLabs() {
+	public @ResponseBody List<LabEntry> getAllLabs() {
 		return labService.findAllLabEntries();
 	}
 	
 	@RequestMapping(value="/api/lab/{labId}", method=RequestMethod.GET)
-	public LabEntry getLab(@PathVariable String labId) {
+	public @ResponseBody LabEntry getLab(@PathVariable String labId) {
 		return labService.findLabEntry(labId);
 	}
 	
@@ -34,13 +34,13 @@ public class LabEntryController {
 		labService.deleteLabEntry(labId);
 	}
 	
-	@RequestMapping(value="/api/admin/lab/{labId}", method = RequestMethod.PUT)
-	public LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
+	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.PUT)
+	public @ResponseBody LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
 		return labService.updateLabEntry(labId, lab);
 	}
 	
-	@RequestMapping(value="/api/admin/lab", method = RequestMethod.POST)
-	public LabEntry createLabEntry(@RequestBody LabEntry lab) {
+	@RequestMapping(value="/api/admin/lab", method=RequestMethod.POST)
+	public @ResponseBody LabEntry createLabEntry(@RequestBody LabEntry lab) {
 		return labService.createLabEntry(lab);
 	}
 }

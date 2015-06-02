@@ -14,3 +14,7 @@
  	</span>
   </div>
 </div>
+
+<script type="text/javascript">
+	var apiUrl = "<c:url value='/api'/>";
+</script>

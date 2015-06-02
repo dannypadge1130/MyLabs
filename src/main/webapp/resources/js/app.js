@@ -6,7 +6,7 @@
 			
 		$scope.type = "*";
 		
-		$http.get('/mylabs/api/entries.json').
+		$http.get(apiUrl+'/entries.json').
 		  success(function(data) {
 			  $scope.entries = data;
 		  }).
@@ -23,7 +23,7 @@
 		
 		$scope.init = function(id) {
 			
-			$http.get('/mylabs/api/blog/'+id+'.json').
+			$http.get(apiUrl+'/blog/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
 			}).
@@ -33,13 +33,32 @@
 			
 		};
 		
+		$scope.blogForm = {};
+		
+	    $scope.blogForm.submitBlogForm = function(item, event) {
+	    	
+	    	var dataObject = {
+	    		title : $scope.blogForm.title,
+	    		description  : $scope.blogForm.description,
+	    		body : $scope.blogForm.body
+	        };
+
+	        var responsePromise = $http.post(apiUrl+"/admin/blog", dataObject, {});
+	        responsePromise.success(function(dataFromServer, status, headers, config) {
+	        	console.log(dataFromServer.title);
+	        });
+	        responsePromise.error(function(data, status, headers, config) {
+	        	alert("Submitting form failed!");
+	        });
+	    };
+		
 	};
 	
 	var TutorialController = function($scope, $http) {
 		
 		$scope.init = function(id) {
 			
-			$http.get('/mylabs/api/tutorial/'+id+'.json').
+			$http.get(apiUrl+'/tutorial/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
 			}).
@@ -55,7 +74,7 @@
 		
 		$scope.init = function(id) {
 			
-			$http.get('/mylabs/api/lab/'+id+'.json').
+			$http.get(apiUrl+'/lab/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
 			}).

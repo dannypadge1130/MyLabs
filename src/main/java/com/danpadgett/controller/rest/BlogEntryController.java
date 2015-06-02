@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.BlogEntry;
@@ -19,12 +20,12 @@ public class BlogEntryController {
 	private BlogEntryService blogEntryService;
 	
 	@RequestMapping(value="/api/blog-entries", method=RequestMethod.GET) 
-	public List<BlogEntry> getAllBlogEntries() {
+	public @ResponseBody List<BlogEntry> getAllBlogEntries() {
 		return blogEntryService.findAllBlogEntries();
 	}
 	
 	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.GET)
-	public BlogEntry getBlogEntry(@PathVariable String blogEntryId) {
+	public @ResponseBody BlogEntry getBlogEntry(@PathVariable String blogEntryId) {
 		return blogEntryService.findBlogEntry(blogEntryId);
 	}
 	
@@ -33,13 +34,13 @@ public class BlogEntryController {
 		blogEntryService.deleteBlogEntry(blogEntryId);
 	}
 	
-	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method = RequestMethod.PUT)
-	public BlogEntry updateBlogEntry(@PathVariable String blogEntryId, @RequestBody BlogEntry blogEntry) {
+	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method=RequestMethod.PUT)
+	public @ResponseBody BlogEntry updateBlogEntry(@PathVariable String blogEntryId, @RequestBody BlogEntry blogEntry) {
 		return blogEntryService.updateBlogEntry(blogEntryId, blogEntry);
 	}
 	
 	@RequestMapping(value="/api/admin/blog", method=RequestMethod.POST)
-	public BlogEntry createBlogEntry(@RequestBody BlogEntry blogEntry) {
+	public @ResponseBody BlogEntry createBlogEntry(@RequestBody BlogEntry blogEntry) {
 		return blogEntryService.createBlogEntry(blogEntry);
 	}
 }

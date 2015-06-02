@@ -30,7 +30,7 @@
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" placeholder="Blog Title" class=" form-control" required="">
+								<input id="title" name="title" type="text" placeholder="Blog Title" class=" form-control" required="required">
 							 </div>
 						</div>
 						

@@ -48,7 +48,7 @@
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
 						    	<textarea name="form-control" id="body" rows="10" cols="80">{{entry.body}}</textarea>
-					            <script>
+					            <script type="text/javascript">
 					                CKEDITOR.replace( 'body' );
 					            </script>
 						  	</div>
