@@ -48,10 +48,10 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body"></textarea>
-					            <script>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body">THIS IS A TEXT</textarea>
+					            <%--script type="text/javascript">
 					                CKEDITOR.replace( 'body' );
-					            </script>
+					            </script--%>
 						  	</div>
 						</div>
 						
