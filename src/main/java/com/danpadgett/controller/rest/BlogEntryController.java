@@ -40,8 +40,7 @@ public class BlogEntryController {
 	}
 	
 	@RequestMapping(value="/api/admin/blog", method=RequestMethod.POST)
-	public @ResponseBody BlogEntry createBlogEntry() {
-		BlogEntry blogEntry = null;
+	public @ResponseBody BlogEntry createBlogEntry(@RequestBody BlogEntry blogEntry) {
 		return blogEntryService.createBlogEntry(blogEntry);
 	}
 }

@@ -24,7 +24,6 @@
 			
 				<form ng-submit="blogForm.submitBlogForm()">
 					<fieldset>
-					
 						<!-- Form Name -->
 						<legend>Create Blog Entry</legend>
 						
@@ -40,7 +39,7 @@
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description" ng-model="blogForm.description">Short Description</textarea>
+						    	<textarea class="form-control" id="description" name="description" ng-model="blogForm.description" required="required">Short Description</textarea>
 						  	</div>
 						</div>
 						
@@ -48,7 +47,7 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body">THIS IS A TEXT</textarea>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body" required="required">THIS IS A TEXT</textarea>
 					            <%--script type="text/javascript">
 					                CKEDITOR.replace( 'body' );
 					            </script--%>
@@ -61,7 +60,6 @@
 						    	<button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
 						  	</div>
 						</div>
-					
 					</fieldset>
 				</form>
 	        </div>

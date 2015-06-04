@@ -68,6 +68,25 @@
 			
 		};
 		
+		$scope.tutorialForm = {};
+		
+	    $scope.tutorialForm.submitTutorialForm = function(item, event) {
+	    	
+	    	var dataObject = {
+	    		title : $scope.tutorialForm.title,
+	    		description  : $scope.tutorialForm.description,
+	    		body : $scope.tutorialForm.body
+	        };
+
+	        var responsePromise = $http.post(apiUrl+"/admin/tutorial", dataObject, {});
+	        responsePromise.success(function(dataFromServer, status, headers, config) {
+	        	console.log(dataFromServer.title);
+	        });
+	        responsePromise.error(function(data, status, headers, config) {
+	        	alert("Submitting form failed!");
+	        });
+	    };
+		
 	};
 	
 	var LabController = function($scope, $http) {
@@ -83,6 +102,27 @@
 			});
 			
 		};
+		
+		$scope.labForm = {};
+		
+	    $scope.labForm.submitLabForm = function(item, event) {
+	    	
+	    	var dataObject = {
+	    		title : $scope.labForm.title,
+	    		description  : $scope.labForm.description,
+	    		liveURL : $scope.labForm.liveURL,
+	    		repoURL : $scope.labForm.repoURL,
+	    		body : $scope.labForm.body
+	        };
+
+	        var responsePromise = $http.post(apiUrl+"/admin/lab", dataObject, {});
+	        responsePromise.success(function(dataFromServer, status, headers, config) {
+	        	console.log(dataFromServer.title);
+	        });
+	        responsePromise.error(function(data, status, headers, config) {
+	        	alert("Submitting form failed!");
+	        });
+	    };
 		
 	};
 	

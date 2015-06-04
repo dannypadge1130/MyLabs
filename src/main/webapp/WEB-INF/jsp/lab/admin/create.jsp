@@ -14,13 +14,14 @@
 		
 		<title>Create New Lab Entry</title>
 	</head>
-	<body>
+	<body ng-app="app" ng-controller="LabController" class="admin">
+	
 		<jsp:include page="../../includes/header.jsp"></jsp:include>	
 		
 		<div class="container">
 			<div class="row entry">
 			
-				<form class="form-horizontal">
+				<form ng-submit="blogForm.submitLabForm()">
 					<fieldset>
 					
 						<!-- Form Name -->
@@ -30,7 +31,7 @@
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" placeholder="Blog Title" class="form-control" required="required">
+								<input id="title" name="title" type="text" placeholder="Blog Title" class="form-control" ng-model="labForm.title" required="required">
 							 </div>
 						</div>
 	
@@ -38,7 +39,7 @@
 						<div class="control-group">
 							<label class="control-label" for="liveUrl">Live URL</label>
 							<div class="controls">
-								<input id="liveUrl" name="liveUrl" type="text" placeholder="Live URL" class="form-control">
+								<input id="liveUrl" name="liveURL" type="text" placeholder="Live URL" class="form-control" ng-model="labForm.liveURL">
 							 </div>
 						</div>
 						
@@ -46,7 +47,7 @@
 						<div class="control-group">
 							<label class="control-label" for="repoUrl">Repository URL</label>
 							<div class="controls">
-								<input id="repoUrl" name="repoUrl" type="text" placeholder="Repository URL" class="form-control">
+								<input id="repoUrl" name="repoURL" type="text" placeholder="Repository URL" class="form-control" ng-model="labForm.repoURL">
 							 </div>
 						</div>
 						
@@ -54,7 +55,7 @@
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description" required="required">Short Description</textarea>
+						    	<textarea class="form-control" id="description" name="description" required="required" ng-model="labForm.description">Short Description</textarea>
 						  	</div>
 						</div>
 						
@@ -62,7 +63,7 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80" required="required"></textarea>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" required="required" ng-model="labForm.body"></textarea>
 					            <script>
 					                CKEDITOR.replace( 'body' );
 					            </script>
