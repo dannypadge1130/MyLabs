@@ -70,9 +70,17 @@
 						  	</div>
 						</div>
 						
+						<!-- BannerUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="bannerImageUrl">Banner Image URL</label>
+							<div class="controls">
+								<input id="bannerImageUrl" name="bannerImageUrl" type="text" placeholder="URL" class=" form-control" ng-model="blogForm.bannerImageUrl" required="required">
+							 </div>
+						</div>
+						
 						<div class="control-group">
 						  	<div class="controls">
-						    	<button id="create" name="create" class="btn btn-success">Create</button>
+						    	<button id="create" type="submit" name="create" class="btn btn-success">Create</button>
 						    	<button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
 						  	</div>
 						</div>

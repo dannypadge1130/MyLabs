@@ -14,14 +14,14 @@
 	
    	<title>Edit Blog {{entry.title}}</title>
   </head>
-  <body>
-  
+  <body class="admin">
+	
   		<jsp:include page="../../includes/header.jsp"></jsp:include>	
   
 		<div class="container">
 			<div class="row entry">
 			
-				<form class="form-horizontal">
+				<form ng-submit="blogForm.submitBlogForm()">
 					<fieldset>
 					
 						<!-- Form Name -->
@@ -31,7 +31,7 @@
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" value="{{entry.title}}" class=" form-control" required="required">
+								<input id="title" name="title" type="text" class="form-control" ng-model="blogForm.title" required="required">
 							 </div>
 						</div>
 						
@@ -39,7 +39,7 @@
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description">{{entry.description}}</textarea>
+						    	<textarea class="form-control" id="description" ng-model="blogForm.description" name="description"></textarea>
 						  	</div>
 						</div>
 						
@@ -47,16 +47,21 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80">{{entry.body}}</textarea>
-					            <script type="text/javascript">
-					                CKEDITOR.replace( 'body' );
-					            </script>
-						  	</div>
+						    	<textarea name="form-control" id="body" ng-model="blogForm.body" rows="10" cols="80"></textarea>
+					        </div>
+						</div>
+						
+						<!-- BannerUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="bannerImageUrl">Banner Image URL</label>
+							<div class="controls">
+								<input id="bannerImageUrl" name="bannerImageUrl" type="text" placeholder="URL" class=" form-control" ng-model="blogForm.bannerImageUrl" required="required">
+							 </div>
 						</div>
 						
 						<div class="control-group">
 						  	<div class="controls">
-						    	<button id="create" name="create" class="btn btn-success">Create</button>
+						    	<button id="update" type="submit" name="update" class="btn btn-success">Update</button>
 						    	<button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
 						  	</div>
 						</div>

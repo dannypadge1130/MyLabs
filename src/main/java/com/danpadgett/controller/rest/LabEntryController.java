@@ -34,7 +34,7 @@ public class LabEntryController {
 		labService.deleteLabEntry(labId);
 	}
 	
-	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.PUT)
+	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.POST)
 	public @ResponseBody LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
 		return labService.updateLabEntry(labId, lab);
 	}

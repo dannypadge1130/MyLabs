@@ -35,7 +35,7 @@ public class TutorialEntryController {
 		tutorialService.deleteTutorialEntry(tutorialId);
 	}
 	
-	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.PUT)
+	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.POST)
 	public @ResponseBody TutorialEntry updateTutorial(@PathVariable String tutorialId, @RequestBody TutorialEntry tutorialEntry) {
 		return tutorialService.updateTutorialEntry(tutorialId, tutorialEntry);
 	}

@@ -47,11 +47,19 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body" required="required">THIS IS A TEXT</textarea>
-					            <%--script type="text/javascript">
+						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="blogForm.body" required="required"></textarea>
+					            <script type="text/javascript">
 					                CKEDITOR.replace( 'body' );
-					            </script--%>
+					            </script>
 						  	</div>
+						</div>
+						
+						<!-- BannerUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="bannerImageUrl">Banner Image URL</label>
+							<div class="controls">
+								<input id="bannerImageUrl" name="bannerImageUrl" type="text" placeholder="URL" class=" form-control" ng-model="blogForm.bannerImageUrl" required="required">
+							 </div>
 						</div>
 						
 						<div class="control-group">

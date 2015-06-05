@@ -21,11 +21,16 @@
 	
 	var BlogController = function($scope, $http) {
 		
+		$scope.blogForm = {};
+		
 		$scope.init = function(id) {
 			
 			$http.get(apiUrl+'/blog/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
+				$scope.blogForm = data;
+				
+				CKEDITOR.replace('body');
 			}).
 			error(function(data) {
 				//TODO
@@ -33,14 +38,13 @@
 			
 		};
 		
-		$scope.blogForm = {};
-		
 	    $scope.blogForm.submitBlogForm = function(item, event) {
 	    	
 	    	var dataObject = {
 	    		title : $scope.blogForm.title,
 	    		description  : $scope.blogForm.description,
-	    		body : $scope.blogForm.body
+	    		body : $scope.blogForm.body,
+	    		bannerImageUrl : $scope.blogForm.bannerImageUrl
 	        };
 
 	        var responsePromise = $http.post(apiUrl+"/admin/blog", dataObject, {});
@@ -56,11 +60,14 @@
 	
 	var TutorialController = function($scope, $http) {
 		
+		$scope.tutorialForm = {};
+		
 		$scope.init = function(id) {
 			
 			$http.get(apiUrl+'/tutorial/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
+				$scope.tutorialForm = data;
 			}).
 			error(function(data) {
 				//TODO
@@ -68,15 +75,14 @@
 			
 		};
 		
-		$scope.tutorialForm = {};
-		
 	    $scope.tutorialForm.submitTutorialForm = function(item, event) {
 	    	
 	    	var dataObject = {
 	    		title : $scope.tutorialForm.title,
 	    		description  : $scope.tutorialForm.description,
-	    		body : $scope.tutorialForm.body
-	        };
+	    		body : $scope.tutorialForm.body,
+	    		bannerImageUrl : $scope.blogForm.bannerImageUrl
+	    	};
 
 	        var responsePromise = $http.post(apiUrl+"/admin/tutorial", dataObject, {});
 	        responsePromise.success(function(dataFromServer, status, headers, config) {
@@ -91,19 +97,21 @@
 	
 	var LabController = function($scope, $http) {
 		
+		$scope.labForm = {};
+		
 		$scope.init = function(id) {
 			
 			$http.get(apiUrl+'/lab/'+id+'.json').
 			success(function(data) {
 				$scope.entry = data;
+				$scope.labForm = data;
+				
 			}).
 			error(function(data) {
 				//TODO
 			});
 			
 		};
-		
-		$scope.labForm = {};
 		
 	    $scope.labForm.submitLabForm = function(item, event) {
 	    	
@@ -112,7 +120,8 @@
 	    		description  : $scope.labForm.description,
 	    		liveURL : $scope.labForm.liveURL,
 	    		repoURL : $scope.labForm.repoURL,
-	    		body : $scope.labForm.body
+	    		body : $scope.labForm.body,
+	    		bannerImageUrl : $scope.blogForm.bannerImageUrl
 	        };
 
 	        var responsePromise = $http.post(apiUrl+"/admin/lab", dataObject, {});

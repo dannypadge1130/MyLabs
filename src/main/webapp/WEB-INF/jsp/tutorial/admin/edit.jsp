@@ -32,7 +32,7 @@
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" class=" form-control" required="required" value="{{entry.title}}">
+								<input id="title" name="title" type="text" class=" form-control" required="required" value="{{entry.title}}" ng-model="tutorialForm.title">
 							 </div>
 						</div>
 						
@@ -40,7 +40,7 @@
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description">{{entry.description}}</textarea>
+						    	<textarea class="form-control" id="description" name="description" ng-model="tutorialForm.description">{{entry.description}}</textarea>
 						  	</div>
 						</div>
 						
@@ -48,16 +48,24 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80">{{entry.body}}</textarea>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="tutorialForm.body">{{entry.body}}</textarea>
 					            <script>
 					                CKEDITOR.replace( 'body' );
 					            </script>
 						  	</div>
 						</div>
 						
+						<!-- BannerUrl Input-->
+						<div class="control-group">
+							<label class="control-label" for="bannerImageUrl">Banner Image URL</label>
+							<div class="controls">
+								<input id="bannerImageUrl" name="bannerImageUrl" type="text" placeholder="URL" class=" form-control" ng-model="blogForm.bannerImageUrl" value="{{entry.bannerImageUrl}}" required="required">
+							 </div>
+						</div>
+						
 						<div class="control-group">
 						  	<div class="controls">
-						    	<button id="create" name="create" class="btn btn-success">Create</button>
+						    	<button id="update" type="submit" name="update" class="btn btn-success">Update</button>
 						    	<button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
 						  	</div>
 						</div>

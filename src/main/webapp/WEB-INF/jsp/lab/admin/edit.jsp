@@ -16,12 +16,12 @@
    	<title>Edit Lab {{entry.title}}</title>
   </head>
   
-  <body>
+  <body class="admin">
 		<jsp:include page="../../includes/header.jsp"></jsp:include>	
 		<div class="container">
 			<div class="row entry">
 			
-				<form class="form-horizontal">
+				<form ng-submit="blogForm.submitLabForm()">
 					<fieldset>
 					
 						<!-- Form Name -->
@@ -31,7 +31,7 @@
 						<div class="control-group">
 							<label class="control-label" for="title">Title</label>
 							<div class="controls">
-								<input id="title" name="title" type="text" value="{{entry.title}}" class=" form-control" required="required">
+								<input id="title" name="title" type="text" value="{{entry.title}}" class=" form-control" ng-model="labForm.title" required="required">
 							 </div>
 						</div>
 						
@@ -40,7 +40,7 @@
 						<div class="control-group">
 							<label class="control-label" for="liveUrl">Live URL</label>
 							<div class="controls">
-								<input id="liveUrl" name="liveUrl" type="text" value="{{entry.liveUrl}}" placeholder="Live URL" class="form-control">
+								<input id="liveUrl" name="liveUrl" type="text" value="{{entry.liveUrl}}" placeholder="Live URL" ng-model="labForm.liveURL" class="form-control">
 							 </div>
 						</div>
 						
@@ -48,7 +48,7 @@
 						<div class="control-group">
 							<label class="control-label" for="repoUrl">Repository URL</label>
 							<div class="controls">
-								<input id="repoUrl" name="repoUrl" type="text" value="{{entry.repoUrl}}" placeholder="Repository URL" class="form-control">
+								<input id="repoUrl" name="repoUrl" type="text" value="{{entry.repoUrl}}" placeholder="Repository URL" ng-model="labForm.repoURL" class="form-control">
 							 </div>
 						</div>
 						
@@ -56,7 +56,7 @@
 						<div class="control-group">
 							<label class="control-label" for="description">Short Description</label>
 						  	<div class="controls">
-						    	<textarea class="form-control" id="description" name="description">{{entry.description}}</textarea>
+						    	<textarea class="form-control" id="description" name="description" ng-model="labForm.description">{{entry.description}}</textarea>
 						  	</div>
 						</div>
 						
@@ -64,7 +64,7 @@
 						<div class="control-group">
 							<label class="control-label" for="body">Body</label>
 						  	<div class="controls">
-						    	<textarea name="form-control" id="body" rows="10" cols="80">{{entry.body}}</textarea>
+						    	<textarea name="form-control" id="body" rows="10" cols="80" ng-model="labForm.body">{{entry.body}}</textarea>
 					            <script>
 					                CKEDITOR.replace( 'body' );
 					            </script>
@@ -73,7 +73,7 @@
 						
 						<div class="control-group">
 						  	<div class="controls">
-						    	<button id="create" name="create" class="btn btn-success">Create</button>
+						    	<button id="update" type="submit" name="update" class="btn btn-success">Update</button>
 						    	<button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
 						  	</div>
 						</div>

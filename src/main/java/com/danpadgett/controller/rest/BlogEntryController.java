@@ -34,7 +34,7 @@ public class BlogEntryController {
 		blogEntryService.deleteBlogEntry(blogEntryId);
 	}
 	
-	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method=RequestMethod.PUT)
+	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method=RequestMethod.POST)
 	public @ResponseBody BlogEntry updateBlogEntry(@PathVariable String blogEntryId, @RequestBody BlogEntry blogEntry) {
 		return blogEntryService.updateBlogEntry(blogEntryId, blogEntry);
 	}
