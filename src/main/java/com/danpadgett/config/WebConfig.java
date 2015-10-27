@@ -21,8 +21,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc //enables our java configuration
-@Import({MongoConfig.class, SecurityConfig.class})
-@ComponentScan(basePackages={"com.danpadgett.controller", "com.danpadgett.service"})
+@Import({DataSourceConfig.class, SecurityConfig.class})
+@ComponentScan(basePackages={"com.danpadgett"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	//this is autowired by name
@@ -31,11 +31,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 		messageSource.setBasename("messages");
 		return messageSource;
-	}
-	
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
 	}
 	
 	//this is autowired by name

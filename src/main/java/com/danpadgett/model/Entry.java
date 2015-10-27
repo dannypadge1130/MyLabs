@@ -2,28 +2,38 @@ package com.danpadgett.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Entity
 public abstract class Entry {
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	private String id;
+    @GeneratedValue
+	private int id;
 	
+	@Column(name="createdate")
 	private Date createdDate;
+	
+	@Column(name="modifieddate")
 	private Date modifiedDate;
 	
+	@Column(name="title")
 	private String title;
+	
+	@Column(name="description")
 	private String description;
+	
+	@Column(name="body")
 	private String body;
 	
+	@Column(name="bannerImageUrl")
 	private String bannerImageUrl;
 	
+	@Column(name="type")
 	private String type;
 	
 	public Entry(String type) {
@@ -66,7 +76,7 @@ public abstract class Entry {
 	public String getType() {
 		return this.type;
 	}
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 

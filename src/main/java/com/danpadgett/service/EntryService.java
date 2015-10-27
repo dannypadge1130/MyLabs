@@ -1,4 +1,4 @@
-package com.danpadgett.service.entry;
+package com.danpadgett.service;
 
 import java.util.List;
 

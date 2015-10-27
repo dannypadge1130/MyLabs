@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.TutorialEntry;
-import com.danpadgett.service.entry.TutorialEntryService;
+import com.danpadgett.service.TutorialEntryService;
 
 @RestController
 public class TutorialEntryController {
@@ -26,22 +26,23 @@ public class TutorialEntryController {
 	}
 	
 	@RequestMapping(value="/api/tutorial/{tutorialId}", method=RequestMethod.GET)
-	public @ResponseBody TutorialEntry getTutorial(@PathVariable String tutorialId, Model model) {
+	public @ResponseBody TutorialEntry getTutorial(@PathVariable int tutorialId, Model model) {
 		return tutorialService.findTutorialEntry(tutorialId);
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.DELETE)
-	public void deleteTutorial(@PathVariable String tutorialId) {
+	public void deleteTutorial(@PathVariable int tutorialId) {
 		tutorialService.deleteTutorialEntry(tutorialId);
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.POST)
-	public @ResponseBody TutorialEntry updateTutorial(@PathVariable String tutorialId, @RequestBody TutorialEntry tutorialEntry) {
-		return tutorialService.updateTutorialEntry(tutorialId, tutorialEntry);
+	public @ResponseBody TutorialEntry updateTutorial(@PathVariable int tutorialId, @RequestBody TutorialEntry tutorialEntry) {
+		tutorialService.updateTutorialEntry(tutorialId, tutorialEntry);
+		return tutorialService.findTutorialEntry(tutorialId);
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial", method=RequestMethod.POST)
-	public @ResponseBody TutorialEntry createTutorial(@RequestBody TutorialEntry tutorialEntry) {
-		return tutorialService.createTutorialEntry(tutorialEntry);
+	public void createTutorial(@RequestBody TutorialEntry tutorialEntry) {
+		tutorialService.createTutorialEntry(tutorialEntry);
 	}
 }

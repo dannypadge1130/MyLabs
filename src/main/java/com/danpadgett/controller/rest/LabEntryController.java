@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.danpadgett.model.LabEntry;
-import com.danpadgett.service.entry.LabEntryService;
+import com.danpadgett.service.LabEntryService;
 
 @RestController
 public class LabEntryController {
@@ -25,22 +25,23 @@ public class LabEntryController {
 	}
 	
 	@RequestMapping(value="/api/lab/{labId}", method=RequestMethod.GET)
-	public @ResponseBody LabEntry getLab(@PathVariable String labId) {
+	public @ResponseBody LabEntry getLab(@PathVariable int labId) {
 		return labService.findLabEntry(labId);
 	}
 	
 	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.DELETE)
-	public void deleteLab(@PathVariable String labId) {
+	public void deleteLab(@PathVariable int labId) {
 		labService.deleteLabEntry(labId);
 	}
 	
 	@RequestMapping(value="/api/admin/lab/{labId}", method=RequestMethod.POST)
-	public @ResponseBody LabEntry updateLabEntry(@PathVariable String labId, @RequestBody LabEntry lab) {
-		return labService.updateLabEntry(labId, lab);
+	public @ResponseBody LabEntry updateLabEntry(@PathVariable int labId, @RequestBody LabEntry lab) {
+		labService.updateLabEntry(labId, lab);
+		return labService.findLabEntry(labId);
 	}
 	
 	@RequestMapping(value="/api/admin/lab", method=RequestMethod.POST)
-	public @ResponseBody LabEntry createLabEntry(@RequestBody LabEntry lab) {
-		return labService.createLabEntry(lab);
+	public void createLabEntry(@RequestBody LabEntry lab) {
+		labService.createLabEntry(lab);
 	}
 }

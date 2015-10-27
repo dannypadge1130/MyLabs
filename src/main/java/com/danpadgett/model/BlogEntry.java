@@ -1,8 +1,10 @@
 package com.danpadgett.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Document(collection="blogentry")
+@Entity
+@Table(name="BlogEntry")
 public class BlogEntry extends Entry {
 
 	private static final String BLOG_ENTRY_TYPE = "blog";

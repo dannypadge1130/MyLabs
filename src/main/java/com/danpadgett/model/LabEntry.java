@@ -1,17 +1,19 @@
 package com.danpadgett.model;
 
-import org.hibernate.validator.constraints.URL;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Document(collection="lab")
+@Entity
+@Table(name="LabEntry")
 public class LabEntry extends Entry {
 	
 	private static final String LAB_ENTRY_TYPE = "lab";
 	
-	@URL
+	@Column(name="liveurl")
 	private String liveURL;
 	
-	@URL
+	@Column(name="repoURL")
 	private String repoURL;
 		
 	public LabEntry() {
