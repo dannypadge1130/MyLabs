@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
 
 import com.danpadgett.model.TutorialEntry;
 
+@Repository("tutorialEntryDao")
 public class TutorialEntryDaoImpl extends AbstractDao<Integer, TutorialEntry> implements TutorialEntryDao {
 
 	@Override

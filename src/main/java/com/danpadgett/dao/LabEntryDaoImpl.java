@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
 
 import com.danpadgett.model.LabEntry;
 
+@Repository("labEntryDao")
 public class LabEntryDaoImpl extends AbstractDao<Integer, LabEntry> implements LabEntryDao {
 
 	@Override
