@@ -1,32 +1,34 @@
 package com.danpadgett.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.danpadgett.dao.BlogEntryDao;
-import com.danpadgett.dao.LabEntryDao;
-import com.danpadgett.dao.TutorialEntryDao;
+import com.danpadgett.model.Entry;
 
-@Service("entryService")
+@Service(value="entryService")
 public class EntryServiceImpl implements EntryService {
 
 	@Autowired
-	BlogEntryDao blogDao;
+	BlogEntryService blogEntryService;
 	
 	@Autowired
-	LabEntryDao labDao;
+	LabEntryService labEntryService;
 	
 	@Autowired
-	TutorialEntryDao tutorialDao;
+	TutorialEntryService tutorialEntryService;
 	
-//	@Override
-//	public List<Entry> findAllEntry() {
-//		
-//		List<Entry> entries = new ArrayList<Entry>();
-//		entries.addAll(blogDao.findAllBlogEntries());
-//		entries.addAll(labDao.findAllLabEntries());
-//		entries.addAll(tutorialDao.findAllTutorialEntries());
-//		
-//		return entries;
-//	}
+	@Override
+	public List<Entry> findAllEntries() {
+		
+		List<Entry> entries = new ArrayList<Entry>();
+		entries.addAll(blogEntryService.findAllBlogEntries());
+		entries.addAll(labEntryService.findAllLabEntries());
+		entries.addAll(tutorialEntryService.findAllTutorialEntries());
+		
+		return entries;
+	}
+	
 }

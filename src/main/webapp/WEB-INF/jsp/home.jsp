@@ -13,7 +13,7 @@
 		<title>MyLabs - Dan Padgett</title>
 	</head>
 
-	<body ng-app="app" ng-controller=EntryController>
+	<body >
 	
 		<jsp:include page="includes/header.jsp"></jsp:include>	
 			

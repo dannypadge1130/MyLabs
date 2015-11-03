@@ -8,11 +8,11 @@ public interface TutorialEntryService {
 
 	public List<TutorialEntry> findAllTutorialEntries();
 	
-	public TutorialEntry findTutorialEntry(int tutorialId);
+	public TutorialEntry findTutorialEntry(long tutorialId);
 	
-	public void deleteTutorialEntry(int tutorialId);
+	public void deleteTutorialEntry(long tutorialId);
 	
-	public void updateTutorialEntry(int tutorialId, TutorialEntry tutorialEntry);
+	public void updateTutorialEntry(long tutorialId, TutorialEntry tutorialEntry);
 
 	public void createTutorialEntry(TutorialEntry tutorialEntry);
 }

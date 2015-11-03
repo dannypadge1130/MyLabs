@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import com.danpadgett.model.LabEntry;
 
 @Repository("labEntryDao")
-public class LabEntryDaoImpl extends AbstractDao<Integer, LabEntry> implements LabEntryDao {
+public class LabEntryDaoImpl extends AbstractDao<Long, LabEntry> implements LabEntryDao {
 
 	@Override
-	public LabEntry findById(int id) {
+	public LabEntry findById(long id) {
 		return getByKey(id);
 	}
 
@@ -22,9 +22,9 @@ public class LabEntryDaoImpl extends AbstractDao<Integer, LabEntry> implements L
 	}
 
 	@Override
-	public void deleteLabEntry(int id) {
+	public void deleteLabEntry(long id) {
 		Query query = getSession().createSQLQuery("delete from LabEntry where id = :id");
-		query.setInteger("id", id);
+		query.setLong("id", id);
 		query.executeUpdate();
 	}
 

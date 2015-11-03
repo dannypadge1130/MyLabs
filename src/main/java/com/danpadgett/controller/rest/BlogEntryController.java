@@ -25,17 +25,17 @@ public class BlogEntryController {
 	}
 	
 	@RequestMapping(value="/api/blog/{blogEntryId}", method=RequestMethod.GET)
-	public @ResponseBody BlogEntry getBlogEntry(@PathVariable int blogEntryId) {
+	public @ResponseBody BlogEntry getBlogEntry(@PathVariable long blogEntryId) {
 		return blogEntryService.findBlogEntry(blogEntryId);
 	}
 	
 	@RequestMapping(value="/api/admin/blog/{blogEntryId}", method=RequestMethod.DELETE)
-	public void deleteBlogEntry(@PathVariable int blogEntryId) {
+	public void deleteBlogEntry(@PathVariable long blogEntryId) {
 		blogEntryService.deleteBlogEntry(blogEntryId);
 	}
 	
 	@RequestMapping(value="/api/admin/blog/{blogEntryId}",method=RequestMethod.POST)
-	public @ResponseBody BlogEntry updateBlogEntry(@PathVariable int blogEntryId, @RequestBody BlogEntry blogEntry) {
+	public @ResponseBody BlogEntry updateBlogEntry(@PathVariable long blogEntryId, @RequestBody BlogEntry blogEntry) {
 		blogEntryService.updateBlogEntry(blogEntryId, blogEntry);
 		return blogEntryService.findBlogEntry(blogEntryId);
 	}

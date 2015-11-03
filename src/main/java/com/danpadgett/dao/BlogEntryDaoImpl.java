@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import com.danpadgett.model.BlogEntry;
 
 @Repository("blogDao")
-public class BlogEntryDaoImpl extends AbstractDao<Integer, BlogEntry> implements BlogEntryDao {
+public class BlogEntryDaoImpl extends AbstractDao<Long, BlogEntry> implements BlogEntryDao {
 
 	@Override
-	public BlogEntry findById(int id) {
+	public BlogEntry findById(long id) {
 		return getByKey(id);
 	}
 
@@ -22,9 +22,9 @@ public class BlogEntryDaoImpl extends AbstractDao<Integer, BlogEntry> implements
 	}
 
 	@Override
-	public void deleteBlogEntry(int id) {
+	public void deleteBlogEntry(long id) {
 		Query query = getSession().createSQLQuery("delete from BlogEntry where id = :id");
-		query.setInteger("id", id);
+		query.setLong("id", id);
 		query.executeUpdate();
 	}
 

@@ -6,11 +6,11 @@ import com.danpadgett.model.TutorialEntry;
 
 public interface TutorialEntryDao {
 
-	TutorialEntry findById(int id);
+	TutorialEntry findById(long id);
 	
 	void saveTutorialEntry(TutorialEntry blog);
 	
-	void deleteTutorialEntry(int id);
+	void deleteTutorialEntry(long id);
 	
 	List<TutorialEntry> findAllTutorialEntries();
 	

@@ -21,15 +21,15 @@ public class LabEntryServiceImpl implements LabEntryService {
 		return dao.findAllLabEntries();
 	}
 
-	public LabEntry findLabEntry(int labEntryId) {
+	public LabEntry findLabEntry(long labEntryId) {
 		return dao.findById(labEntryId);
 	}
 	
-	public void deleteLabEntry(int labEntryId) {
+	public void deleteLabEntry(long labEntryId) {
 		dao.deleteLabEntry(labEntryId);
 	}
 	
-	public void updateLabEntry(int labId, LabEntry lab) {
+	public void updateLabEntry(long labId, LabEntry lab) {
 		
 		LabEntry oldLab = dao.findById(labId);
 		oldLab.setBannerImageUrl(lab.getBannerImageUrl());

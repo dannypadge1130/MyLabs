@@ -1,8 +1,0 @@
-language: java
-
-jdk:
-   - openjdk7
-
-script:
-   - mvn clean
-   - mvn compile war:war

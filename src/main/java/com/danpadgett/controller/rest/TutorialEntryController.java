@@ -26,17 +26,17 @@ public class TutorialEntryController {
 	}
 	
 	@RequestMapping(value="/api/tutorial/{tutorialId}", method=RequestMethod.GET)
-	public @ResponseBody TutorialEntry getTutorial(@PathVariable int tutorialId, Model model) {
+	public @ResponseBody TutorialEntry getTutorial(@PathVariable long tutorialId, Model model) {
 		return tutorialService.findTutorialEntry(tutorialId);
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.DELETE)
-	public void deleteTutorial(@PathVariable int tutorialId) {
+	public void deleteTutorial(@PathVariable long tutorialId) {
 		tutorialService.deleteTutorialEntry(tutorialId);
 	}
 	
 	@RequestMapping(value="/api/admin/tutorial/{tutorialId}", method=RequestMethod.POST)
-	public @ResponseBody TutorialEntry updateTutorial(@PathVariable int tutorialId, @RequestBody TutorialEntry tutorialEntry) {
+	public @ResponseBody TutorialEntry updateTutorial(@PathVariable long tutorialId, @RequestBody TutorialEntry tutorialEntry) {
 		tutorialService.updateTutorialEntry(tutorialId, tutorialEntry);
 		return tutorialService.findTutorialEntry(tutorialId);
 	}

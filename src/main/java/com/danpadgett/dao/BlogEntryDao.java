@@ -6,11 +6,11 @@ import com.danpadgett.model.BlogEntry;
 
 public interface BlogEntryDao {
 
-	BlogEntry findById(int id);
+	BlogEntry findById(long id);
 	
 	void saveBlogEntry(BlogEntry blog);
 	
-	void deleteBlogEntry(int id);
+	void deleteBlogEntry(long id);
 	
 	List<BlogEntry> findAllBlogEntries();
 	

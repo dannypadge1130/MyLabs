@@ -8,11 +8,11 @@ public interface LabEntryService {
 
 	public List<LabEntry> findAllLabEntries();
 	
-	public LabEntry findLabEntry(int labId);
+	public LabEntry findLabEntry(long labId);
 	
-	public void deleteLabEntry(int labId);
+	public void deleteLabEntry(long labId);
 	
-	public void updateLabEntry(int labId, LabEntry lab);
+	public void updateLabEntry(long labId, LabEntry lab);
 	
 	public void createLabEntry(LabEntry lab);
 }

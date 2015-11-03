@@ -8,11 +8,11 @@ public interface BlogEntryService {
 	
 	public List<BlogEntry> findAllBlogEntries();
 	
-	public BlogEntry findBlogEntry(int blogEntryId);
+	public BlogEntry findBlogEntry(long blogEntryId);
 	
-	public void deleteBlogEntry(int blogEntryId);
+	public void deleteBlogEntry(long blogEntryId);
 	
-	public void updateBlogEntry(int blogEntryId, BlogEntry blogEntry);
+	public void updateBlogEntry(long blogEntryId, BlogEntry blogEntry);
 	
 	public void createBlogEntry(BlogEntry blogEntry);
 

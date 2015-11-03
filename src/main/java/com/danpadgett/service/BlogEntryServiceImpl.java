@@ -21,15 +21,15 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 		return dao.findAllBlogEntries();
 	}
 
-	public BlogEntry findBlogEntry(int blogEntryId) {
+	public BlogEntry findBlogEntry(long blogEntryId) {
 		return dao.findById(blogEntryId);
 	}
 
-	public void deleteBlogEntry(int blogEntryId) {
+	public void deleteBlogEntry(long blogEntryId) {
 		dao.deleteBlogEntry(blogEntryId);
 	}
 
-	public void updateBlogEntry(int blogEntryId, BlogEntry blogEntry) {
+	public void updateBlogEntry(long blogEntryId, BlogEntry blogEntry) {
 		
 		BlogEntry oldBlogEntry = dao.findById(blogEntryId);
 		oldBlogEntry.setBannerImageUrl(blogEntry.getBannerImageUrl());

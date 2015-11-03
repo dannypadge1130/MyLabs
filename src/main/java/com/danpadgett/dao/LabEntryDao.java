@@ -6,11 +6,11 @@ import com.danpadgett.model.LabEntry;
 
 public interface LabEntryDao {
 
-	LabEntry findById(int id);
+	LabEntry findById(long id);
 	
 	void saveLabEntry(LabEntry blog);
 	
-	void deleteLabEntry(int id);
+	void deleteLabEntry(long id);
 	
 	List<LabEntry> findAllLabEntries();
 	

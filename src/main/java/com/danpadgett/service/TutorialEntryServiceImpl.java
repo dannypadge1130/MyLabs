@@ -21,15 +21,15 @@ public class TutorialEntryServiceImpl implements TutorialEntryService {
 		return dao.findAllTutorialEntries();
 	}
 
-	public TutorialEntry findTutorialEntry(int tutorialEntryId) {
+	public TutorialEntry findTutorialEntry(long tutorialEntryId) {
 		return dao.findById(tutorialEntryId);
 	}
 	
-	public void deleteTutorialEntry(int tutorialEntryId) {
+	public void deleteTutorialEntry(long tutorialEntryId) {
 		dao.deleteTutorialEntry(tutorialEntryId);
 	}
 
-	public void updateTutorialEntry(int tutorialId, TutorialEntry tutorialEntry) {
+	public void updateTutorialEntry(long tutorialId, TutorialEntry tutorialEntry) {
 		
 		TutorialEntry oldTutorialEntry = dao.findById(tutorialId);
 		oldTutorialEntry.setBannerImageUrl(tutorialEntry.getBannerImageUrl());
