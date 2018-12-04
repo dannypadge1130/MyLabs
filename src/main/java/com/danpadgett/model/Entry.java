@@ -39,6 +39,9 @@ public abstract class Entry {
 	@Column(name="bannerImageUrl", length=100)
 	private String bannerImageUrl;
 	
+	@Column(name="type", length=50)
+	private String type;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -89,5 +92,13 @@ public abstract class Entry {
 	
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+	
+	public String getType() {
+		return this.type;
+	}
+	
+	protected void setType(String type) {
+		this.type = type;
 	}
 }

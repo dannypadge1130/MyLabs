@@ -17,7 +17,7 @@
 	
 		<jsp:include page="includes/header.jsp"></jsp:include>	
 			
-		<div class="container"> 
+		<div class="container" ng-app="app" ng-controller="EntryController"> 
 	  		<div class="row top-buffer" ng-repeat="entry in entries | orderBy:createdDate">
 				<div class="col-xs-10 col-md-8 col-md-offset-2 entry">
             		

@@ -7,4 +7,9 @@ import javax.persistence.Table;
 @Table(name="BlogEntry")
 public class BlogEntry extends Entry {
 
+	public BlogEntry() {
+		super.setType("blog");
+	}
+	
+	
 }

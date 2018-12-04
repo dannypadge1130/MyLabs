@@ -7,4 +7,8 @@ import javax.persistence.Table;
 @Table(name="TutorialEntry")
 public class TutorialEntry extends Entry {
 	
+	public TutorialEntry() {
+		super.setType("tutorial");
+	}
+	
 }

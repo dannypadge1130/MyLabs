@@ -8,12 +8,16 @@ import javax.persistence.Table;
 @Table(name="LabEntry")
 public class LabEntry extends Entry {
 	
+	public LabEntry() {
+		super.setType("lab");
+	}
+	
 	@Column(name="liveurl", length=50)
 	private String liveURL;
 	
 	@Column(name="repoURL", length=50)
 	private String repoURL;
-	
+		
 	public String getLiveURL() {
 		return liveURL;
 	}
