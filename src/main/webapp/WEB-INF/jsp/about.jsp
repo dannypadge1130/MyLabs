@@ -28,7 +28,7 @@
 				<div class="page-header">ABOUT</div>
 					
 				<div class="about">
-					<p>My name is Dan Padgett.  I am a web application developer located in NYC (The Big Apple).  
+					<p>My name is Dan Padgett.  I am a web application developer located in NYC.  
 					I decided to start this site to help track my ideas and personal work.  I broke this site 
 					down into three sections, articles and blog entries, tutorials, and most importantly different 
 					personal projects I decide to work on.  I will call these personal projects labs.</p>
@@ -54,7 +54,7 @@
 				</div>
 				
 				<div>
-					<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MongoDB</em>
+					<em>The tech stack for this site is SpringMVC, AngularJS, JQuery, Bootstrap, MySQL</em>
 				</div>
 				<hr>
 			</div>

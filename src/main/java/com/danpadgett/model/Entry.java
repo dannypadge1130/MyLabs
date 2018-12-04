@@ -16,8 +16,8 @@ import javax.persistence.Lob;
 public abstract class Entry {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	@Column(name = "id", nullable=false, unique=true)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", nullable=false, unique=true, updatable=false)
 	private long id;
 	
 	@Column(name="createdate", nullable=false)
@@ -36,7 +36,7 @@ public abstract class Entry {
 	@Lob
 	private String body;
 	
-	@Column(name="bannerImageUrl", length=50)
+	@Column(name="bannerImageUrl", length=100)
 	private String bannerImageUrl;
 	
 	public String getTitle() {

@@ -21,7 +21,8 @@ public class EntryController {
 	
 	@RequestMapping(value="/api/entries", method=RequestMethod.GET) 
 	public @ResponseBody List<BlogEntry> getAllBlogEntries() {
-		return blogEntryService.findAllBlogEntries();
+		List<BlogEntry> entries = blogEntryService.findAllBlogEntries();
+		return entries;
 	}
 	
 }
